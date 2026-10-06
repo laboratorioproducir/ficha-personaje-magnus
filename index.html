@@ -1,0 +1,2596 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EXPEDIENTE CLASIFICADO — MAGNUS, Octavio D.</title>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&family=IBM+Plex+Mono:wght@300;400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --paper: #f4f0e8;
+  --paper-dark: #e8e0d0;
+  --ink: #1a1a1a;
+  --ink-light: #3d3832;
+  --red-stamp: #8b1a1a;
+  --red-stamp-light: #a82c2c;
+  --blue-ink: #1a3a5c;
+  --blue-light: #2a5a8c;
+  --gold: #b8960c;
+  --green-stamp: #2a5c3a;
+  --border: #c4b89a;
+  --shadow: rgba(26,26,26,0.12);
+}
+
+* { margin:0; padding:0; box-sizing:border-box; }
+
+body {
+  background: #2a2520;
+  background-image:
+    radial-gradient(ellipse at 20% 50%, rgba(60,50,40,0.4) 0%, transparent 70%),
+    radial-gradient(ellipse at 80% 20%, rgba(40,35,30,0.3) 0%, transparent 60%);
+  font-family: 'IBM Plex Sans', sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
+
+.dossier {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--paper);
+  background-image:
+    url("data:image/svg+xml,%3Csvg width='100' height='100' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100' height='100' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  border: 1px solid var(--border);
+  box-shadow:
+    0 0 0 3px var(--paper-dark),
+    0 0 0 4px var(--border),
+    0 20px 60px rgba(0,0,0,0.5),
+    inset 0 0 80px rgba(0,0,0,0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+.dossier::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background:
+    linear-gradient(180deg, rgba(0,0,0,0.02) 0%, transparent 3%, transparent 97%, rgba(0,0,0,0.04) 100%),
+    linear-gradient(90deg, rgba(0,0,0,0.03) 0%, transparent 2%, transparent 98%, rgba(0,0,0,0.03) 100%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.dossier-inner {
+  padding: 3rem 3.5rem;
+  position: relative;
+  z-index: 2;
+}
+
+/* HEADER */
+.doc-header {
+  text-align: center;
+  border-bottom: 3px double var(--ink);
+  padding-bottom: 2rem;
+  margin-bottom: 2.5rem;
+  position: relative;
+}
+
+.doc-header::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 0; right: 0;
+  border-bottom: 1px solid var(--ink);
+}
+
+.classification-bar {
+  background: var(--red-stamp);
+  color: #fff;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.doc-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--ink);
+  margin-bottom: 0.3rem;
+}
+
+.doc-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 400;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+
+.stamp {
+  position: absolute;
+  top: 1.5rem;
+  right: 0;
+  font-family: 'Special Elite', cursive;
+  font-size: 1.1rem;
+  color: var(--red-stamp);
+  border: 3px solid var(--red-stamp);
+  padding: 0.3rem 0.8rem;
+  transform: rotate(-12deg);
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* SECTIONS */
+.section {
+  margin-bottom: 3rem;
+  animation: fadeInUp 0.6s ease both;
+}
+
+.section:nth-child(2) { animation-delay: 0.1s; }
+.section:nth-child(3) { animation-delay: 0.2s; }
+.section:nth-child(4) { animation-delay: 0.3s; }
+.section:nth-child(5) { animation-delay: 0.4s; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.section-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--ink);
+}
+
+.section-number {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--ink);
+  color: var(--paper);
+  padding: 0.2rem 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.section-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+/* TABLES */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+  font-size: 0.85rem;
+}
+
+table th {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-align: left;
+  padding: 0.6rem 0.8rem;
+  background: var(--ink);
+  color: var(--paper);
+  border: 1px solid var(--ink);
+}
+
+table td {
+  padding: 0.55rem 0.8rem;
+  border: 1px solid var(--border);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+table tr:nth-child(even) td {
+  background: rgba(0,0,0,0.02);
+}
+
+table td:first-child {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 500;
+  font-size: 0.8rem;
+  white-space: nowrap;
+  color: var(--ink-light);
+}
+
+/* TEXT */
+p {
+  font-size: 0.9rem;
+  line-height: 1.75;
+  margin-bottom: 1rem;
+  text-align: justify;
+  color: var(--ink-light);
+}
+
+h3 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+  color: var(--ink);
+  padding-left: 0.8rem;
+  border-left: 3px solid var(--red-stamp);
+}
+
+h4 {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+  color: var(--blue-ink);
+}
+
+strong {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+/* SUBCHAPTER */
+.subchapter {
+  margin-bottom: 2rem;
+  padding: 1.2rem 1.5rem;
+  background: rgba(0,0,0,0.015);
+  border-left: 3px solid var(--border);
+  border-radius: 0 2px 2px 0;
+}
+
+.subchapter-title {
+  font-family: 'Special Elite', cursive;
+  font-size: 1rem;
+  color: var(--ink);
+  margin-bottom: 0.8rem;
+  letter-spacing: 0.03em;
+}
+
+/* POLICE BOX */
+.police-box {
+  border: 2px solid var(--ink);
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  position: relative;
+  background: rgba(255,255,255,0.3);
+}
+
+.police-box::before {
+  content: 'LAW ENFORCEMENT SENSITIVE';
+  position: absolute;
+  top: -0.6rem;
+  left: 1rem;
+  background: var(--paper);
+  padding: 0 0.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  color: var(--red-stamp);
+}
+
+/* NOTES */
+.investigator-note {
+  background: rgba(26,58,92,0.04);
+  border: 1px solid rgba(26,58,92,0.15);
+  border-left: 4px solid var(--blue-ink);
+  padding: 1rem 1.2rem;
+  margin: 1rem 0;
+  font-style: italic;
+  font-size: 0.85rem;
+  line-height: 1.7;
+  color: var(--blue-ink);
+}
+
+.note-author {
+  font-style: normal;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 600;
+  display: block;
+  margin-top: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+/* SLANG TABLE */
+.slang-table td:last-child {
+  font-style: italic;
+  color: var(--ink-light);
+}
+
+/* TIMELINE */
+.timeline-item {
+  display: flex;
+  gap: 1.2rem;
+  margin-bottom: 1.2rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px dashed var(--border);
+}
+
+.timeline-marker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--red-stamp);
+  white-space: nowrap;
+  min-width: 80px;
+  padding-top: 0.15rem;
+}
+
+.timeline-content {
+  flex: 1;
+}
+
+.timeline-content p {
+  text-align: left;
+  margin-bottom: 0.5rem;
+}
+
+/* TAGS */
+.tag {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.15rem 0.5rem;
+  border: 1px solid;
+  margin-right: 0.3rem;
+  margin-bottom: 0.3rem;
+}
+
+.tag-red { color: var(--red-stamp); border-color: var(--red-stamp); }
+.tag-blue { color: var(--blue-ink); border-color: var(--blue-ink); }
+.tag-green { color: var(--green-stamp); border-color: var(--green-stamp); }
+.tag-gold { color: var(--gold); border-color: var(--gold); }
+
+/* STRENGTH/WEAKNESS CARDS */
+.sw-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1rem 0;
+}
+
+.sw-card {
+  padding: 1rem;
+  border: 1px solid var(--border);
+  background: rgba(255,255,255,0.4);
+}
+
+.sw-card.strength { border-left: 3px solid var(--green-stamp); }
+.sw-card.weakness { border-left: 3px solid var(--red-stamp); }
+
+.sw-card-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.4rem;
+}
+
+.sw-card.strength .sw-card-title { color: var(--green-stamp); }
+.sw-card.weakness .sw-card-title { color: var(--red-stamp); }
+
+.sw-card p {
+  font-size: 0.82rem;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+/* PHASE CARDS */
+.phase {
+  margin-bottom: 1.5rem;
+  padding: 1.2rem 1.5rem;
+  border: 1px solid var(--border);
+  position: relative;
+  background: rgba(255,255,255,0.3);
+}
+
+.phase-number {
+  position: absolute;
+  top: -0.6rem;
+  left: 1rem;
+  background: var(--blue-ink);
+  color: var(--paper);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  padding: 0.15rem 0.6rem;
+  text-transform: uppercase;
+}
+
+.phase-title {
+  font-family: 'Special Elite', cursive;
+  font-size: 0.95rem;
+  color: var(--ink);
+  margin-bottom: 0.5rem;
+  margin-top: 0.3rem;
+}
+
+/* FOOTER */
+.doc-footer {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 3px double var(--ink);
+  text-align: center;
+}
+
+.doc-footer p {
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.1em;
+  color: var(--ink-light);
+  margin-bottom: 0.3rem;
+}
+
+.seal {
+  width: 80px;
+  height: 80px;
+  border: 3px solid var(--red-stamp);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem auto;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: var(--red-stamp);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  text-align: center;
+  line-height: 1.3;
+  opacity: 0.6;
+  transform: rotate(-5deg);
+}
+
+/* REDACTED */
+.redacted {
+  background: var(--ink);
+  color: var(--ink);
+  padding: 0 0.3rem;
+  user-select: none;
+}
+
+/* WATERMARK */
+.watermark {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-30deg);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 6rem;
+  font-weight: 700;
+  color: rgba(139,26,26,0.03);
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  pointer-events: none;
+  z-index: 0;
+  white-space: nowrap;
+}
+
+/* EXECUTIVE SUMMARY */
+.executive-summary {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(26,58,92,0.05);
+  border: 2px solid var(--blue-ink);
+  border-left: 6px solid var(--blue-ink);
+  position: relative;
+}
+
+.exec-summary-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  padding-bottom: 0.8rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.exec-summary-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: var(--blue-ink);
+  text-transform: uppercase;
+}
+
+.exec-summary-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.65rem;
+  font-weight: 600;
+  background: var(--blue-ink);
+  color: var(--paper);
+  padding: 0.3rem 0.8rem;
+  letter-spacing: 0.1em;
+}
+
+.exec-summary-content p {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  color: var(--ink-light);
+  text-align: justify;
+}
+
+.exec-summary-tags {
+  margin-top: 1rem;
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+/* RESPONSIVE */
+@media (max-width: 700px) {
+  .dossier-inner { padding: 1.5rem 1.2rem; }
+  .sw-grid { grid-template-columns: 1fr; }
+  .doc-title { font-size: 1.1rem; }
+  .stamp { font-size: 0.8rem; top: 0.5rem; }
+  .timeline-item { flex-direction: column; gap: 0.3rem; }
+  .surveillance-grid { grid-template-columns: 1fr; }
+  .evidence-photos { grid-template-columns: 1fr 1fr; }
+  .fingerprint-section { flex-direction: column; }
+  .location-map { grid-template-columns: 1fr; }
+  .behavior-analysis { grid-template-columns: 1fr; }
+}
+
+/* PRINT STYLES FOR PDF */
+@media print {
+  @page {
+    size: A4;
+    margin: 0.5in;
+  }
+  
+  body {
+    background: #2a2520 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    padding: 0 !important;
+  }
+  
+  .dossier {
+    background: var(--paper) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    box-shadow: none !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  .dossier::before {
+    display: none !important;
+  }
+  
+  .dossier-inner {
+    padding: 2rem 2.5rem !important;
+  }
+  
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Prevent page breaks inside important sections */
+  .section,
+  .subchapter,
+  .police-box,
+  .investigator-note,
+  .wiretap-transcript,
+  .crim-profile,
+  .interpol-notice,
+  .timeline-event,
+  .evidence-grid,
+  .behavior-item,
+  .sw-card,
+  .phase,
+  .executive-summary,
+  .surveillance-section,
+  .fingerprint-section,
+  .location-map,
+  table {
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Allow page breaks between major sections */
+  .section {
+    page-break-before: auto;
+    break-before: auto;
+  }
+  
+  /* Ensure headers stay with content */
+  h3, h4, .section-header {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  /* Preserve all visual elements */
+  .surv-photo-main,
+  .evidence-photo,
+  .mugshot-frame {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .tag,
+  .classification-bar,
+  .exec-summary-badge,
+  .phase-number,
+  .evidence-marker,
+  .photo-marker,
+  .section-number {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  table th,
+  .police-box,
+  .investigator-note,
+  .wiretap-header,
+  .crim-profile,
+  .interpol-notice {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .timeline-dot,
+  .timeline-line {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .fingerprint-card {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .surv-rec-dot {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .executive-summary,
+  .exec-summary-header {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .sw-card.strength,
+  .sw-card.weakness {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .behavior-item {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .doc-header,
+  .doc-footer {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .stamp {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .interpol-stamp {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  .seal {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+  }
+  
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+  
+  /* Ensure dark background shows */
+  body::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #2a2520 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    color-adjust: exact !important;
+    z-index: -1;
+  }
+}
+
+/* SURVEILLANCE PHOTO SECTION */
+.surveillance-section {
+  margin-bottom: 2.5rem;
+  padding: 1.5rem;
+  background: rgba(0,0,0,0.03);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--red-stamp);
+}
+
+.surveillance-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.surveillance-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--red-stamp);
+}
+
+.surveillance-badge {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  background: var(--red-stamp);
+  color: #fff;
+  padding: 0.2rem 0.6rem;
+  letter-spacing: 0.1em;
+}
+
+.surveillance-grid {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Main surveillance photo */
+.surv-photo-main {
+  position: relative;
+  background: #1a1a1a;
+  padding: 6px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+}
+
+.surv-photo-main img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  filter: contrast(1.05) saturate(0.85);
+}
+
+.surv-photo-main::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    repeating-linear-gradient(0deg, transparent, transparent 3px, rgba(0,0,0,0.02) 3px, rgba(0,0,0,0.02) 6px),
+    radial-gradient(ellipse at center, transparent 70%, rgba(0,0,0,0.15) 100%);
+  pointer-events: none;
+}
+
+.surv-timestamp {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  color: #00ff00;
+  text-shadow: 0 0 3px rgba(0,255,0,0.5);
+  letter-spacing: 0.05em;
+  z-index: 2;
+}
+
+.surv-cam-id {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.5rem;
+  color: rgba(255,255,255,0.6);
+  z-index: 2;
+}
+
+.surv-rec {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 2;
+}
+
+.surv-rec-dot {
+  width: 6px;
+  height: 6px;
+  background: #ff0000;
+  border-radius: 50%;
+  animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+  0%, 50% { opacity: 1; }
+  51%, 100% { opacity: 0; }
+}
+
+.surv-rec-text {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.5rem;
+  color: #ff0000;
+  letter-spacing: 0.1em;
+}
+
+/* Surveillance data panel */
+.surv-data {
+  padding: 0.5rem 0;
+}
+
+.surv-data table {
+  font-size: 0.82rem;
+}
+
+.surv-label {
+  font-family: 'IBM Plex Mono', monospace !important;
+  font-size: 0.65rem !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light) !important;
+  white-space: nowrap;
+  width: 140px;
+}
+
+/* Evidence photos grid */
+.evidence-photos {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.evidence-photo {
+  position: relative;
+  background: #1a1a1a;
+  padding: 4px;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.evidence-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.evidence-photo .photo-label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,0.85);
+  padding: 3px 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.5rem;
+  color: #ccc;
+  letter-spacing: 0.05em;
+}
+
+.evidence-photo .photo-marker {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  background: var(--gold);
+  color: #000;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.5rem;
+  font-weight: 700;
+  padding: 1px 5px;
+  letter-spacing: 0.05em;
+}
+
+/* Photo effect variants - LIGHTER */
+.eff-cctv img {
+  filter: grayscale(0.8) contrast(1.15);
+}
+
+.eff-zoom img {
+  object-fit: cover;
+  object-position: 55% 35%;
+  transform: scale(1.5);
+  filter: contrast(1.1) saturate(0.7);
+}
+
+.eff-night img {
+  filter: brightness(0.85) contrast(1.15) saturate(0.6);
+}
+
+.eff-grain::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='g'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23g)' opacity='0.08'/%3E%3C/svg%3E");
+  pointer-events: none;
+  mix-blend-mode: overlay;
+}
+
+/* EVIDENCE SECTION */
+.evidence-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.evidence-card {
+  border: 1px solid var(--border);
+  padding: 1rem;
+  background: rgba(255,255,255,0.3);
+  position: relative;
+}
+
+.evidence-marker {
+  position: absolute;
+  top: -0.5rem;
+  left: 0.8rem;
+  background: var(--gold);
+  color: var(--ink);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.55rem;
+  font-weight: 700;
+  padding: 0.1rem 0.5rem;
+  letter-spacing: 0.1em;
+}
+
+.evidence-card h4 {
+  margin-top: 0.3rem;
+  font-size: 0.72rem;
+}
+
+.evidence-card p {
+  font-size: 0.8rem;
+  margin-bottom: 0;
+}
+
+/* FINGERPRINT */
+.fingerprint-section {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  border: 1px dashed var(--border);
+  background: rgba(255,255,255,0.2);
+}
+
+.fingerprint-card {
+  text-align: center;
+  min-width: 130px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 1rem 0.8rem 0.6rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.fingerprint-svg {
+  width: 90px;
+  height: 110px;
+  margin: 0 auto 0.5rem;
+  display: block;
+}
+
+.fingerprint-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--ink-light);
+}
+
+.fingerprint-info {
+  flex: 1;
+}
+
+.fingerprint-info p {
+  text-align: left;
+  font-size: 0.82rem;
+  margin-bottom: 0.5rem;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 1rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  color: var(--blue-ink);
+  text-decoration: none;
+  border: 1px solid var(--blue-ink);
+  padding: 0.4rem 1rem;
+  transition: all 0.2s;
+}
+
+/* TIMELINE */
+.timeline-visual {
+  position: relative;
+  padding: 2rem 0;
+  margin: 2rem 0;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  bottom: 0;
+  width: 2px;
+  background: var(--ink);
+  transform: translateX(-50%);
+}
+
+.timeline-event {
+  display: flex;
+  align-items: center;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.timeline-event:nth-child(odd) {
+  flex-direction: row;
+}
+
+.timeline-event:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.timeline-content {
+  width: 45%;
+  padding: 1rem;
+  background: rgba(255,255,255,0.3);
+  border: 1px solid var(--border);
+  position: relative;
+}
+
+.timeline-event:nth-child(odd) .timeline-content {
+  margin-right: 5%;
+}
+
+.timeline-event:nth-child(even) .timeline-content {
+  margin-left: 5%;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  background: var(--red-stamp);
+  border: 2px solid var(--paper);
+  border-radius: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.timeline-year {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--red-stamp);
+  margin-bottom: 0.3rem;
+}
+
+.timeline-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  color: var(--ink);
+}
+
+.timeline-desc {
+  font-size: 0.8rem;
+  line-height: 1.5;
+  color: var(--ink-light);
+}
+
+/* INTERPOL NOTICE */
+.interpol-notice {
+  border: 3px double var(--red-stamp);
+  padding: 2rem;
+  margin: 2rem 0;
+  background: rgba(255,255,255,0.4);
+  position: relative;
+}
+
+.interpol-header {
+  text-align: center;
+  border-bottom: 2px solid var(--red-stamp);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.interpol-logo {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--red-stamp);
+  letter-spacing: 0.3em;
+  margin-bottom: 0.5rem;
+}
+
+.interpol-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  color: var(--ink-light);
+  text-transform: uppercase;
+}
+
+.interpol-stamp {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: 'Special Elite', cursive;
+  font-size: 1.2rem;
+  color: var(--red-stamp);
+  border: 3px solid var(--red-stamp);
+  padding: 0.5rem 1rem;
+  transform: rotate(-15deg);
+  opacity: 0.7;
+  letter-spacing: 0.1em;
+}
+
+.interpol-field {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+  font-size: 0.85rem;
+}
+
+.interpol-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  color: var(--ink);
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.05em;
+}
+
+.interpol-value {
+  color: var(--ink-light);
+}
+
+/* CRIMINOLOGICAL PROFILE */
+.crim-profile {
+  background: rgba(26,58,92,0.05);
+  border: 1px solid var(--blue-ink);
+  padding: 2rem;
+  margin: 2rem 0;
+}
+
+.crim-header {
+  text-align: center;
+  border-bottom: 2px solid var(--blue-ink);
+  padding-bottom: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.crim-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--blue-ink);
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.crim-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  color: var(--ink-light);
+  margin-top: 0.5rem;
+}
+
+.crim-section {
+  margin-bottom: 1.5rem;
+}
+
+.crim-section-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--blue-ink);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.crim-text {
+  font-size: 0.85rem;
+  line-height: 1.6;
+  color: var(--ink-light);
+  text-align: justify;
+}
+
+.crim-meter {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.8rem;
+}
+
+.crim-meter-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 600;
+  width: 150px;
+  color: var(--ink);
+}
+
+.crim-meter-bar {
+  flex: 1;
+  height: 20px;
+  background: rgba(0,0,0,0.1);
+  position: relative;
+  border: 1px solid var(--border);
+}
+
+.crim-meter-fill {
+  height: 100%;
+  background: var(--blue-ink);
+  position: relative;
+}
+
+.crim-meter-value {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 50px;
+  text-align: right;
+  color: var(--ink);
+}
+
+/* WIRETAP TRANSCRIPTS */
+.wiretap-section {
+  margin: 2rem 0;
+}
+
+.wiretap-header {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 1rem;
+  text-align: center;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin-bottom: 1.5rem;
+}
+
+.wiretap-transcript {
+  background: rgba(255,255,255,0.5);
+  border: 1px solid var(--border);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.wiretap-meta {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-bottom: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--border);
+  font-size: 0.8rem;
+}
+
+.wiretap-field {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.wiretap-label {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 600;
+  color: var(--ink);
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.wiretap-value {
+  color: var(--ink-light);
+}
+
+.wiretap-dialogue {
+  font-size: 0.85rem;
+  line-height: 1.8;
+  color: var(--ink-light);
+}
+
+.wiretap-speaker {
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: 0.5rem;
+}
+
+.wiretap-note {
+  margin-top: 1rem;
+  padding: 0.8rem;
+  background: rgba(184,150,12,0.1);
+  border-left: 3px solid var(--gold);
+  font-size: 0.8rem;
+  font-style: italic;
+  color: var(--ink-light);
+}
+
+.wiretap-classification {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.6rem;
+  font-weight: 700;
+  color: var(--red-stamp);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 700px) {
+  .timeline-visual { padding: 1rem 0; }
+  .timeline-line { left: 20px; }
+  .timeline-event, .timeline-event:nth-child(even) { flex-direction: row; }
+  .timeline-content { width: calc(100% - 50px); margin-left: 50px !important; margin-right: 0 !important; }
+  .timeline-dot { left: 20px; }
+  .interpol-field { grid-template-columns: 1fr; gap: 0.3rem; }
+  .wiretap-meta { grid-template-columns: 1fr; }
+}
+
+/* LOCATION MAP */
+.location-map {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin: 1.5rem 0;
+  padding: 1.5rem;
+  background: rgba(255,255,255,0.3);
+  border: 1px solid var(--border);
+}
+
+.map-container {
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 0.5rem;
+}
+
+.map-svg {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.map-legend table {
+  font-size: 0.8rem;
+}
+
+.map-dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+}
+
+/* BEHAVIOR ANALYSIS */
+.behavior-analysis {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.behavior-item {
+  padding: 1rem;
+  background: rgba(0,0,0,0.02);
+  border-left: 3px solid var(--blue-ink);
+}
+
+.behavior-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--blue-ink);
+  margin-bottom: 0.5rem;
+}
+
+.behavior-item p {
+  font-size: 0.82rem;
+  text-align: left;
+  margin-bottom: 0;
+}
+
+@media (max-width: 700px) {
+  .location-map { grid-template-columns: 1fr; }
+  .behavior-analysis { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+<div class="watermark">Confidencial</div>
+
+<div class="dossier">
+<div class="dossier-inner">
+
+<!-- RESUMEN EJECUTIVO -->
+<div class="executive-summary">
+  <div class="exec-summary-header">
+    <div class="exec-summary-title">RESUMEN EJECUTIVO</div>
+    <div class="exec-summary-badge">CLASIFICADO — NIVEL 3</div>
+  </div>
+  <div class="exec-summary-content">
+    <p style="font-size:0.95rem; line-height:1.8; margin-bottom:1rem;">
+      <strong>Octavio Damián Magnus</strong>, alias <strong>"Damián Olivera"</strong> en Los Santos, es un conductor de escape y operador logístico de 24 años que huyó de Argentina tras ser traicionado por su socio durante el Operativo Llave Maestra (septiembre 2021). Con antecedentes por robo agravado y asociación ilícita, ingresó a Estados Unidos con identidad falsa uruguaya y se estableció como mecánico en Harmony mientras reconstruye su red en el bajo mundo. Perfil capaz de violencia cuando es necesario pero prefiere evitarla — su especialidad es la conducción evasiva y la logística, no el combate directo. <strong>Busca roleplay de acción, persecuciones, tiroteos defensivos, y construcción de red criminal.</strong> Es un personaje que puede meterse en tiroteos pero siempre como último recurso o para proteger a los suyos. Su pasado lo alcanza mediante Difusión Roja de INTERPOL, pero opera bajo protección de identidad falsa. Material para entrevistas IC: transcripciones de escuchas, perfil criminológico del FBI, y protocolo de identificación que evita CK instantáneo.
+    </p>
+    <div class="exec-summary-tags">
+      <span class="tag tag-red">Prófugo</span>
+      <span class="tag tag-blue">Identidad falsa activa</span>
+      <span class="tag tag-gold">Conductor de escape</span>
+      <span class="tag tag-green">Acción defensiva</span>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<div class="doc-header">
+  <div class="stamp">Confidencial</div>
+  <div class="classification-bar">Law Enforcement Sensitive — Restricted Access</div>
+  <h1 class="doc-title">Expediente de Personaje</h1>
+  <p class="doc-subtitle">Octavio Damián Magnus — Los Santos Police Department / Interpol</p>
+</div>
+
+<!-- SURVEILLANCE PHOTO SECTION -->
+<div class="surveillance-section">
+  <div class="surveillance-header">
+    <span class="surveillance-title">Mugshot arresto // La Matanza 2015 — Archivo de Inteligencia</span>
+    <span class="surveillance-badge">Clasificado</span>
+  </div>
+
+  <div class="surveillance-grid">
+    <div class="surv-photo-main">
+      <img src="5.png" alt="Mugshot arresto // La Matanza 2015 — 17 años — Sujeto Magnus">
+      <div class="surv-rec">
+      </div>
+      <div class="surv-cam-id">CAM-04 // SECTOR 7</div>
+      <div class="surv-timestamp">14.09.2015 — 03:42:17 AM</div>
+    </div>
+
+    <div class="surv-data">
+      <table>
+        <tr><td class="surv-label">Sujeto</td><td>MAGNUS, Octavio Damián</td></tr>
+        <tr><td class="surv-label">Alias activo en LS</td><td><strong style="color:var(--red-stamp);">"DAMIÁN OLIVERA"</strong> — Identidad prestada (pasaporte falso provisto por M. Acosta)</td></tr>
+        <tr><td class="surv-label">Estado</td><td><span class="tag tag-red">Prófugo</span> <span class="tag tag-blue">Identidad falsa activa</span></td></tr>
+        <tr><td class="surv-label">Contexto</td><td style="font-size:0.78rem;">Captura obtenida durante seguimiento previo al <strong>Operativo Llave Maestra</strong>. Sujeto identificado en punto de encuentro del partido de Quilmes, minutos antes de la intervención policial. El sujeto logró evadir el cerco.</td></tr>
+        <tr><td class="surv-label">Nota</td><td style="font-size:0.75rem; font-style:italic;">El sujeto ingresó a EE.UU. bajo identidad falsa. LSPD NO tiene registro activo de "Magnus" en sus sistemas. Solo Interpol y FBI conocen su verdadera identidad. Cualquier agente de campo que lo identifique debe reportar — NO intervenir sin autorización.</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Additional surveillance photos -->
+  <h4 style="margin-top:1.5rem; margin-bottom:0.8rem; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-light);">Capturas adicionales de inteligencia</h4>
+
+  <div class="evidence-photos">
+    <div class="evidence-photo">
+      <img src="2.png" alt="CCTV Garage Avellaneda">
+      <div class="photo-marker">EVID-A</div>
+      <div class="photo-label">CCTV Garage Avellaneda // 22.02.2019 — 14:33hs</div>
+    </div>
+    <div class="evidence-photo">
+      <img src="3.png" alt="Seguimiento Ruta 2">
+      <div class="photo-marker">EVID-B</div>
+      <div class="photo-label">Seguimiento Ruta 2 // 14.09.2021 — 05:12 AM</div>
+    </div>
+    <div class="evidence-photo">
+      <img src="4.png" alt="Punto encuentro Quilmes">
+      <div class="photo-marker">EVID-C</div>
+      <div class="photo-label">Punto encuentro Quilmes // 13.09.2021 — 23:47hs</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.72rem; font-style:italic; color:var(--ink-light); margin-top:0.5rem; text-align:left;">Todas las imágenes corresponden al mismo sujeto. Variaciones de ángulo y resolución debidas a condiciones de vigilancia y equipamiento utilizado en cada operativo.</p>
+
+  <!-- Additional photos -->
+  <h4 style="margin-top:1.5rem; margin-bottom:0.8rem; font-family:'IBM Plex Mono',monospace; font-size:0.72rem; letter-spacing:0.1em; text-transform:uppercase; color:var(--ink-light);">Registro fotográfico adicional</h4>
+
+  <div class="evidence-photos" style="grid-template-columns: repeat(3, 1fr);">
+    <div class="evidence-photo">
+      <img src="1.png" alt="Mugshot arresto 2015">
+      <div class="photo-marker">MUG-01</div>
+      <div class="photo-label">Fotografía de Vigilancia // Archivo de Inteligencia</div>
+    </div>
+    <div class="evidence-photo">
+      <img src="6.png" alt="Taller Los Santos 2022">
+      <div class="photo-marker">LS-01</div>
+      <div class="photo-label">Taller Harmony, Los Santos // 2022 — Vigilancia activa</div>
+    </div>
+    <div class="evidence-photo">
+      <img src="7.png" alt="Reunión bar">
+      <div class="photo-marker">LS-02</div>
+      <div class="photo-label">Reunión sospechosa // Bar "El Rincón" — Vigilancia encubierta</div>
+    </div>
+  </div>
+
+  <p style="font-size:0.72rem; font-style:italic; color:var(--ink-light); margin-top:0.5rem; text-align:left;">MUG-01: Fotografía de archivo policial argentino. LS-01 y LS-02: Capturas de vigilancia en territorio estadounidense bajo identidad falsa "Damián Olivera".</p>
+</div>
+<!-- SECTION I: FICHA TÉCNICA -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">I</span>
+    <span class="section-title">Ficha Técnica — Datos Personales</span>
+  </div>
+
+  <h3>Información General</h3>
+  <table>
+    <tr><td>Nombre completo</td><td>Octavio Damián Magnus</td></tr>
+    <tr><td>Apodos</td><td>"El Tavi", "Magnus", "El Flaco" <em>(despectivo, usado por rivales)</em></td></tr>
+    <tr><td>Fecha de nacimiento</td><td>22 de mayo de 1998</td></tr>
+    <tr><td>Lugar de nacimiento</td><td>Partido de La Matanza, Gran Buenos Aires, Argentina</td></tr>
+    <tr><td>Nacionalidad</td><td>Argentino</td></tr>
+    <tr><td>Estado civil</td><td>Soltero</td></tr>
+    <tr><td>Residencia anterior</td><td>Barrio Villa Celanova, La Matanza, Buenos Aires</td></tr>
+    <tr><td>Residencia actual</td><td>Los Santos, Estado de San Andreas, EE. UU.</td></tr>
+    <tr><td>Ocupación declarada</td><td>Mecánico automotriz <em>(fachada)</em> / Operador logístico en el mercado negro <em>(actividad real)</em></td></tr>
+  </table>
+
+  <h3>Descripción Física</h3>
+  <table>
+    <tr><td>Edad aparente</td><td>24 años</td></tr>
+    <tr><td>Estatura</td><td>1.78 m</td></tr>
+    <tr><td>Peso</td><td>78 kg</td></tr>
+    <tr><td>Complexión</td><td>Atlética — hombros anchos, cintura definida. No es voluminoso pero se nota que entrena.</td></tr>
+    <tr><td>Tez</td><td>Trigueña / morena clara</td></tr>
+    <tr><td>Cabello</td><td>Negro, dreadlocks (rastas) gruesas que caen alrededor del rostro y los hombros. Algunas mechones caen sobre la frente, dándole un aspecto callejero y descuidado a propósito.</td></tr>
+    <tr><td>Ojos</td><td>Marrón oscuro, mirada penetrante pero serena. Expresión neutral, casi impasible — como si evaluara a todo el mundo sin mover un músculo.</td></tr>
+    <tr><td>Rasgos faciales</td><td>Pómulos marcados, mandíbula fuerte y definida, labios llenos. Afeitado limpio o con sombra muy leve de barba. Nariz recta. Una cicatriz fina de 3 cm en la ceja izquierda (caída de moto a los 16).</td></tr>
+    <tr><td>Tatuajes</td><td><strong>Cuello:</strong> Patrones tribales intrincados en tinta rojiza-marrón que cubren ambos lados del cuello, extendiéndose hasta la mandíbula y bajando hacia las clavículas. <strong>Brazo izquierdo:</strong> reloj de arena sin agujas en el antebrazo <em>(simboliza que "el tiempo no espera")</em>. <strong>Pecho:</strong> virgen de Luján pequeña sobre el corazón <em>(protección)</em>. <strong>Nuca:</strong> letras "O.M." en tipografía gótica discreta (ocultas bajo las rastas).</td></tr>
+    <tr><td>Manos</td><td>Callosas, uñas siempre cortas. Manchas de grasa de motor que nunca terminan de irse.</td></tr>
+  </table>
+
+  <h3>Vestimenta Habitual</h3>
+  <p><strong>Estilo general:</strong> Urbano funcional. No llama la atención pero tampoco pasa desapercibido. Ropa de marcas accesibles, siempre limpia y cuidada.</p>
+  <table>
+    <tr><td>Interior</td><td>Remmera blanca o negra, siempre lisa, metida por dentro.</td></tr>
+    <tr><td>Capa exterior</td><td>Camisa de franela a cuadros (azul marino/gris) o buzo con capucha negro. En invierno, campera de cuero negra tipo biker, gastada en los codos.</td></tr>
+    <tr><td>Pantalones</td><td>Jeans oscuros rectos, sin roturas. A veces joggers negros cuando está en el taller.</td></tr>
+    <tr><td>Calzado</td><td>Zapatillas Nike Air Max negras o botas de trabajo tipo Timberland. Siempre limpias.</td></tr>
+    <tr><td>Accesorios</td><td>Cadena de plata fina con medalla de San Cayetano (patrón del trabajo). Reloj Casio digital en muñeca derecha. Guantes de mecánico sin dedos cuando trabaja.</td></tr>
+    <tr><td>Modo "trabajo"</td><td>Guantes negros de cuero fino, gorra oscura calada, mochila negra con herramientas. Nunca joyería ostentosa.</td></tr>
+  </table>
+
+  <h3>Psicología y Personalidad</h3>
+  <p><strong>Rasgo dominante: Templanza.</strong> Octavio no grita, no amenaza, no se intimida. Habla bajo, mira a los ojos, y cuando algo no le cierra, se queda en silencio hasta que la otra persona rellena los huecos. Esa quietud genera más respeto que cualquier grito.</p>
+
+  <h4>Código moral interno</h4>
+  <p><strong>Lealtad antes que todo.</strong> Para Octavio, la palabra dada vale más que un contrato. Si le dice a alguien "estoy con vos", se juega entero. Pero esa misma lealtad lo vuelve vulnerable: confía difícil, y una vez que confía, le cuesta ver las señales de traición hasta que es tarde.</p>
+  <p><strong>Odio visceral a la traición.</strong> No perdona y no olvida. No busca venganza impulsiva — la espera. El que lo traiciona sabe que lo sabe, y eso alcanza.</p>
+  <p><strong>No lastima a quien no debe.</strong> No roba a familias trabajadoras, no se mete con quien ya está en el suelo. Su código es claro: si vas a hacer daño, que sea por negocios, nunca por placer.</p>
+  <p><strong>Desconfianza estructural.</strong> Cree que todo el mundo tiene un precio. No es cínico por maldad, sino por experiencia. En su barrio, vio cómo la necesidad convertía a los mejores en soplones.</p>
+  <p><strong>Humor seco.</strong> Sarcástico, irónico. Usa el humor como escudo y como arma. Nunca se ríe fuerte; siempre es una media sonrisa que te deja dudando si fue en serio.</p>
+
+  <p style="margin-top:1.2rem;"><strong>Lo que lo define por dentro:</strong> Octavio carga con una culpa silenciosa. En Argentina dejó gente atrás — una madre que cree que está trabajando en España, un hermano menor que lo idolatraba, y un socio que terminó en el hospital por una decisión que él tomó en una fracción de segundo. No habla de eso. Pero cada vez que duerme mal (que es casi siempre), es por eso.</p>
+  <p>No busca ser el jefe. No le interesa el poder por el poder. Lo que quiere es <strong>control</strong>: controlar su entorno, controlar los riesgos, controlar cuándo entra y cuándo sale. El problema es que en este mundo, el control es una ilusión, y Octavio lo sabe mejor que nadie.</p>
+
+  <h3>Fortalezas y Debilidades</h3>
+  <div class="sw-grid">
+    <div class="sw-card strength">
+      <div class="sw-card-title">Conducción evasiva</div>
+      <p>Capacidad sobrenatural para leer el tránsito en tiempo real. Sabe por dónde cortar, cuándo frenar, cuándo acelerar. Aprendió en las calles sin asfaltar de La Matanza y perfeccionó huyendo.</p>
+    </div>
+    <div class="sw-card strength">
+      <div class="sw-card-title">Templanza bajo presión</div>
+      <p>No se congela, no se acelera. En una situación de crisis, su pulso baja en vez de subir. Prefiere que le griten "¡manejá!" a que le griten "¡corré!".</p>
+    </div>
+    <div class="sw-card strength">
+      <div class="sw-card-title">Lectura de personas</div>
+      <p>Sabe cuándo alguien miente. No por ciencia, sino por supervivencia. En su entorno, equivocarte de persona te costaba la libertad o la vida.</p>
+    </div>
+    <div class="sw-card strength">
+      <div class="sw-card-title">Mecánica automotriz</div>
+      <p>Conoce los autos por dentro y por fuera. Puede identificar un modelo de memoria por el sonido del motor, cambiar una cerradura en segundos, y modificar un vehículo para que no aparezca en ningún sistema.</p>
+    </div>
+    <div class="sw-card strength">
+      <div class="sw-card-title">Logística y planificación</div>
+      <p>Piensa tres pasos adelante. Antes de un operativo, ya tiene pensadas tres rutas de escape, dos puntos de reunión alternativos y un contacto al que llamar si todo sale mal.</p>
+    </div>
+    <div class="sw-card strength">
+      <div class="sw-card-title">Discreción</div>
+      <p>No habla de más. No publica, no presume, no deja rastro digital. En un mundo donde todos quieren ser vistos, Octavio sabe que el que sobrevive es el que nadie ve venir.</p>
+    </div>
+  </div>
+
+  <div class="sw-grid" style="margin-top:0.5rem;">
+    <div class="sw-card weakness">
+      <div class="sw-card-title">Paranoia a ser atrapado</div>
+      <p>No es un miedo abstracto — es una obsesión funcional. Siempre revisa si lo siguen, cambia de ruta sin avisar, y duerme con la mochila lista.</p>
+    </div>
+    <div class="sw-card weakness">
+      <div class="sw-card-title">Miedo a la traición</div>
+      <p>Su mayor vulnerabilidad. Le cuesta delegar porque necesita controlar. Cuando alguien nuevo entra en su círculo, lo pone a prueba constantemente.</p>
+    </div>
+    <div class="sw-card weakness">
+      <div class="sw-card-title">Soledad autoimpuesta</div>
+      <p>No tiene amigos de verdad — tiene socios, contactos y conocidos. La última persona a la que llamó "amigo" lo entregó a la policía.</p>
+    </div>
+    <div class="sw-card weakness">
+      <div class="sw-card-title">Culpa reprimida</div>
+      <p>La culpa por lo que dejó en Argentina no lo deja dormir. A veces toma decisiones irracionales para "equilibrar la balanza", como ayudar a alguien que no debería.</p>
+    </div>
+  </div>
+</div>
+<!-- SECTION II: HISTORIA DE FONDO -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">II</span>
+    <span class="section-title">Historia de Fondo — Lore Completo</span>
+  </div>
+
+  <div class="subchapter">
+    <div class="subchapter-title">Capítulo 1: El Barrio (1998–2012)</div>
+    <p>Octavio Damián Magnus nació el 22 de mayo de 1998 en el Hospital Posadas, en el partido de La Matanza, Gran Buenos Aires. Creció en Villa Celanova, un barrio donde las veredas se terminaban antes que las ganas de los pibes de jugar a la pelota en la calle.</p>
+    <p>Su padre, <strong>Rubén Magnus</strong>, era mecánico de un taller familiar en la Avenida San Martín. Un hombre de pocas palabras, manos enormes y espalda encorvada de tanto estar debajo de autos ajenos. Su madre, <strong>Silvia "Chiqui" Fernández</strong>, trabajaba de mañana en una escuela como auxiliar y de tarde limpiaba oficinas en el centro. Dos trabajos, dos sueldos que nunca alcanzaban.</p>
+    <p>Octavio era el mayor de dos hermanos. Su hermano menor, <strong>Facundo</strong> (tres años menor), era lo contrario: rubio, inquieto, sociable. Octavio era el callado, el que observaba, el que se quedaba mirando el motor desarmado del Torino del vecino mientras los otros pibes jugaban en la plaza.</p>
+    <p><strong>El contexto:</strong> La Matanza a fines de los noventa y principios de los dos mil no era un lugar para soñadores. Era un lugar para los que aprendían rápido. La escuela pública funcionaba a medias, la comisaría del barrio estaba más ocupada archivando causas que resolviéndolas, y el trabajo formal era algo que los padres deseaban para sus hijos pero que pocos lograban.</p>
+    <p><strong>Primeros contactos con la calle:</strong> A los 11 años, Octavio ya sabía desarmar y armar una cerradura de auto con alambre. No lo aprendió de nadie — lo aprendió mirando. Su padre, sin saberlo, le había transmitido el oficio. A los 13, un vecino del fondo, <strong>Walter "El Wachi" Pereyra</strong>, le ofreció sus primeros "encargos": llevar mensajes, vigilar esquinas, avisar si venía la yuta. Pagaban poco, pero pagaban. Y Octavio necesitaba plata — no para él, sino para ayudar en casa cuando su viejo se quedaba sin trabajo, que pasaba seguido.</p>
+    <p><strong>La primera vez que lo paró la policía:</strong> Tenía 14 años. Iba en bici con una mochila que no era suya. Lo pararon, le pidieron DNI, le preguntaron de dónde venía. Contestó tranquilo. Lo dejaron ir. Pero algo cambió ese día: se dio cuenta de que la policía no lo detenía por lo que hacía, sino por lo que parecía. Y aprendió a parecer lo correcto.</p>
+  </div>
+
+  <div class="subchapter">
+    <div class="subchapter-title">Capítulo 2: Las Ruedas (2012–2017)</div>
+    <p>A los 15 años, Octavio ya manejaba. No tenía licencia, obviamente, pero en el Gran Buenos Aires de esa época, un pibe con un auto viejo en la calle no era raro — era parte del paisaje. Su primer auto fue un <strong>Chevrolet Corsa 97</strong>, gris, con el escape roto y el asiento del conductor sujeto con alambre. Se lo dejó usar el dueño del taller donde su viejo trabajaba, a cambio de que Octavio le ayudara los sábados.</p>
+    <p><strong>El aprendizaje real:</strong> No fue un mentor quien le enseñó a conducir. Fue la necesidad. A los 16, ya hacía "encargos" más serios: trasladar vehículos robados de un garage a otro, llevar paquetes de un punto A a un punto B sin preguntar qué había adentro, y servir de "campana" en operativos chicos — robos a casas de familia en barrios cerrados de Pilar y Nordelta.</p>
+    <p>Su especialidad, sin proponérselo, fue naciendo ahí: <strong>la conducción</strong>. Mientras otros se ponían nerviosos al volante, Octavio sentía que el auto era una extensión de su cuerpo. Podía leer el tránsito como un ajedrecista lee el tablero. Sabía dónde estaban los patrulleros antes de verlos. Sabía qué calle tenía lomos de burro y cuál no. Sabía cuándo un semático en amarillo significaba "pasar" y cuándo significaba "frenar y esperar".</p>
+    <p><strong>El primer arresto:</strong> A los 17 años. Lo agarraron con un auto que había sido reportado como robado tres horas antes. Dijo que se lo había prestado un amigo. No dio nombre. Pasó 72 horas detenido. Salió porque el dueño del auto no hizo la denuncia formal — era un auto robado a su vez de una aseguradora. Lección aprendida: <strong>nunca manejar algo sin saber de dónde viene</strong>.</p>
+    <p><strong>La relación con su padre:</strong> Rubén sabía, en algún nivel, lo que hacía su hijo mayor. Nunca lo dijo. Nunca lo preguntó. Pero un día, cuando Octavio tenía 18, le dijo una sola frase mientras arreglaban un motor juntos: <em>"Hacé lo que quieras, pero no te equivoques de calle. Hay calles que no tienen vuelta."</em> Octavio no olvidó jamás esas palabras.</p>
+  </div>
+
+  <div class="subchapter">
+    <div class="subchapter-title">Capítulo 3: La Subida y el Equipo (2017–2021)</div>
+    <p>Entre los 19 y los 23 años, Octavio se integró en una organización dedicada al <strong>robo de vehículos de alta gama por encargo</strong> y su posterior reventa en el mercado paralelo. No era una banda callejera — era una operación con estructura: tenía mecánicos, tenía contactos en concesionarias, tenía gente que conseguía documentación adulterada, y tenía "clientes" en Uruguay y Paraguay.</p>
+    <p><strong>El rol de Octavio:</strong> Era el conductor de extracción — el que sacaba el auto del punto de robo y lo llevaba al garage seguro. También era el encargado de logística de traslados: mover vehículos entre provincias, coordinar horarios, elegir rutas alternativas. No era el líder, pero era <strong>indispensable</strong>. Y eso, en ese mundo, es casi lo mismo.</p>
+
+    <h4>El equipo</h4>
+    <table>
+      <tr><td>Walter "El Wachi" Pereyra</td><td>El que lo metió. Contactos, negociaciones, la cara visible. Carismático, impulsivo, inteligente pero impaciente.</td></tr>
+      <tr><td>Lucas "Luqui" Benítez</td><td>Mecánico. El que preparaba los autos para la reventa. Tranquilo, metódico, el único al que Octavio consideraba amigo de verdad.</td></tr>
+      <tr><td>Diego "El Diego" Sosa</td><td>El conductor de los operativos más grandes. Experimentado, temerario, con una reputación que le abría puertas y le generaba enemigos por igual.</td></tr>
+      <tr><td>Martín "El Colo" Acosta</td><td>El que conseguía la documentación. Abogado caído, cerebro brillante, alcohólico funcional. Era el estratega del grupo.</td></tr>
+    </table>
+
+    <p><strong>El ascenso:</strong> Durante esos cuatro años, Octavio pasó de ser un pibe que llevaba mensajes a ser el operador logístico de una red que movía entre 40 y 60 vehículos por mes. No era rico — la plata se repartía entre muchos — pero vivía mejor que su viejo, pagaba las cuentas de la casa, y le compró a su mamá una cocina nueva. Eso le alcanzaba.</p>
+    <p><strong>El error:</strong> Empezó a creer que era invisible.</p>
+  </div>
+
+  <div class="subchapter">
+    <div class="subchapter-title">Capítulo 4: Operativo Llave Maestra (2021) — El Punto de Quiebre</div>
+    <div class="timeline-item">
+      <div class="timeline-marker">14/09/2021<br>03:47 AM</div>
+      <div class="timeline-content">
+        <p><strong>Lugar:</strong> Garage clandestino en el partido de Quilmes, zona sur del Gran Buenos Aires.</p>
+        <p>La operación era routine: recibir tres vehículos — un BMW X5, una Toyota Hilux y un Mercedes-Benz Clase C — trasladarlos a un depósito en La Plata, y desde ahí enviarlos a Montevideo por vía fluvial. El plan estaba cerrado. Los horarios estaban coordinados. Las rutas estaban verificadas.</p>
+        <p>Pero algo no cerraba.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker">LA TRAICIÓN</div>
+      <div class="timeline-content">
+        <p>Octavio esperaba en el garage con la Hilux ya cargada en el remolque. Recibió un mensaje de El Wachi: <em>"Todo bien, llego en 10."</em> Diez minutos después, no llegó El Wachi. Llegó la Policía Federal.</p>
+        <p>No fue una redada al azar. Fue un operativo montado con inteligencia: vehículos tapados en las esquinas, drones térmicos, y un equipo de asalto que entró por dos puntos simultáneos. Alguien había soplado. Y no era un soplón cualquiera — era alguien que conocía los horarios, los puntos de encuentro y las rutas.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker">LA FUGA</div>
+      <div class="timeline-content">
+        <p>Octavio escuchó el primer estruendo — la puerta del garage cediendo. No pensó. Acto reflejo. Subió a la Hilux, puso primera, y salió por la puerta trasera del depósito, atravesando una pared de chapa que daba a una calle sin salida. El BMW y el Mercedes quedaron atrás. El Wachi no apareció jamás. Luqui fue detenido en el lugar. El Diego logró escapar pero fue recapturado tres días después.</p>
+        <p>Octavio manejó durante cuarenta minutos sin detenerse. Cambió de auto dos veces — dejó la Hilux en un descampado y robó un Fiat Palio que tenía las llaves puestas en una vereda de Lanús. Desde ahí fue a la casa de su madre, entró por la ventana, agarró una mochila con algo de ropa, tres mil pesos en efectivo, y su DNI.</p>
+      </div>
+    </div>
+    <div class="timeline-item">
+      <div class="timeline-marker">06:15 AM</div>
+      <div class="timeline-content">
+        <p>Desde un teléfono público de una estación de servicio en Ruta 2, llamó a su madre. Le dijo que se iba. Que no era por ella. Que la iba a llamar cuando pudiera. Ella no preguntó. Solo lloró.</p>
+      </div>
+    </div>
+    <div class="timeline-item" style="border-bottom:none;">
+      <div class="timeline-marker">CRUCE<br>FRONTERIZO</div>
+      <div class="timeline-content">
+        <p>Cruzó a Uruguay por el puente de Colonia en un micro de línea, con el DNI en la mano y la mochila al hombro. De ahí, un vuelo a São Paulo con pasaporte falso conseguido por El Colo antes de que también cayera. De São Paulo, otro vuelo — esta vez con destino a Los Santos, Estados Unidos, bajo una identidad prestada que El Colo tenía guardada como seguro de vida.</p>
+      </div>
+    </div>
+
+    <h4>Lo que dejó atrás</h4>
+    <p>Su madre, que recibió una llamada anónima tres semanas después diciéndole que su hijo estaba "a salvo en el extranjero". Su hermano Facundo, que tenía 20 años y acababa de entrar a la universidad. Luqui, que fue condenado a seis años por asociación ilícita y robo agravado. Una causa judicial abierta: <strong>Expediente N° 4.217/2021</strong>. Una orden de captura internacional emitida por Interpol a solicitud de la Fiscalía Federal de Quilmes.</p>
+  </div>
+
+  <div class="subchapter">
+    <div class="subchapter-title">Capítulo 5: Los Santos (2022 — Presente)</div>
+    <p><strong>Llegada:</strong> Octavio llegó a Los Santos en noviembre de 2021, con 23 años, sin contactos, sin dinero real, y con la certeza de que si lo identificaban, lo extraditaban. Pero no llegó como Octavio Magnus. Llegó como <strong>"Damián Olivera"</strong> — la identidad del pasaporte falso que El Colo tenía guardada como seguro de vida. Un uruguayo nacido en Salto, con documentos limpios, sin antecedentes en ningún sistema estadounidense. Esa fue su primera línea de defensa.</p>
+    <p><strong>La identidad falsa:</strong> "Damián Olivera" existe en papel — pasaporte, un historial crediticio mínimo construido a propósito, y un número de seguro social que El Colo compró a un contacto en Miami. Octavio sabe que si la policía lo para y le pide documentos, "Damián" no levanta alertas. Pero también sabe que si lo investigan en profundidad, si cruzan datos con Interpol o si alguien lo reconoce, la fachada se cae. Por eso vive con la mochila lista. Por eso no se queda nunca más de dos noches seguidas en el mismo lugar sin tener una ruta de escape pensada.</p>
+    <p><strong>Los primeros meses:</strong> Fueron los más duros. Vivió en un monoambiente en Strawberry, trabajó de lavacoches en un taller de Vespucci Beach, y durmió con la luz encendida durante las primeras tres semanas. No hablaba con nadie más de lo necesario. No se hizo amigos. No salió de noche. Observaba. Todo bajo el nombre de Damián.</p>
+    <p><strong>La adaptación:</strong> Poco a poco, Octavio entendió que Los Santos era diferente. La ciudad era más grande, más cara, más violenta — pero también más anónima. Nadie lo conocía. Nadie sabía su nombre real. Y eso, para alguien que había huido de su propio país, era un lujo.</p>
+    <p><strong>El reinicio:</strong> Consiguió trabajo como mecánico en un taller de Harmony, cerca de la frontera con Blaine County. El dueño, un hombre llamado <strong>Gerald</strong>, no hizo preguntas cuando Octavio le mostró sus manos callosas y le dijo que sabía de motores. Empezó a ganar lo suficiente para mudarse a un lugar mejor, comprarse ropa decente, y empezar a ahorrar.</p>
+    <p><strong>Los contactos:</strong> Pero Octavio no vino a Los Santos a ser mecánico. Eso era el plan de supervivencia. El plan real era otro: <strong>encontrar su lugar en la cadena</strong>. Empezó a frecuentar los mismos bares, a conocer a la misma gente, a escuchar las mismas conversaciones. Y cuando alguien necesitó a un conductor para un "trabajo" — un robo a una casa de empeños en East Los Santos — Octavio dijo que sí. Sin preguntar cuánto. Sin preguntar por qué. Solo dijo: <em>"Yo manejo."</em></p>
+
+    <h4>Estado actual</h4>
+    <p>Octavio está en Los Santos desde hace aproximadamente dos años. Vive bajo el nombre de "Damián Olivera". Tiene un departamento pequeño en Pillbox Hill. Trabaja de mecánico de día. De noche, hace "encargos" — traslados de vehículos, logística de operativos, conducción de escape. Está construyendo su red. No tiene grupo fijo todavía. No tiene jefe. Y no tiene intención de tener uno — al menos no por ahora. Nadie en su círculo conoce su nombre real. Para todos, es Damián.</p>
+
+    <h4>Metas</h4>
+    <table>
+      <tr><td>Corto plazo</td><td>Establecer una base operativa sólida. Conseguir un taller propio o asociarse con alguien de confianza. Hacer contactos que no lo traicionen.</td></tr>
+      <tr><td>Mediano plazo</td><td>Montar una operación de reventa de vehículos robados a mediana escala, usando Los Santos como centro de distribución hacia el norte del estado.</td></tr>
+      <tr><td>Largo plazo</td><td>Tener suficiente dinero y suficientes contactos como para que, si algún día la cosa se complica de nuevo, pueda desaparecer sin dejar rastro — esta vez, para siempre.</td></tr>
+    </table>
+
+    <p style="margin-top:1rem;"><strong>Lo que no sabe:</strong> Que la Interpol no se olvida. Que su expediente sigue abierto. Y que en algún lugar de Los Santos, puede haber alguien que lo conozca — o que crea conocerlo.</p>
+  </div>
+</div>
+<!-- SECTION III: EXPEDIENTE POLICIAL -->
+<div class="section">
+  <div class="section-header">
+    <span class="section-number">III</span>
+    <span class="section-title">Expediente Policial — Formato LSPD / Interpol</span>
+  </div>
+
+  <div class="police-box">
+    <table>
+      <tr><th colspan="2" style="text-align:center; letter-spacing:0.2em;">DATOS DEL SUJETO</th></tr>
+      <tr><td>Nombre</td><td>MAGNUS, Octavio Damián</td></tr>
+      <tr><td>Alias conocidos</td><td>"El Tavi", "Magnus", "El Flaco", "O.M."</td></tr>
+      <tr><td>Fecha de nacimiento</td><td>22/05/1998</td></tr>
+      <tr><td>Lugar de nacimiento</td><td>La Matanza, Buenos Aires, Argentina</td></tr>
+      <tr><td>Nacionalidad</td><td>Argentina</td></tr>
+      <tr><td>Sexo</td><td>Masculino</td></tr>
+      <tr><td>Estatura / Peso</td><td>1.78 m / 78 kg</td></tr>
+      <tr><td>Complexión</td><td>Atlética</td></tr>
+      <tr><td>Cabello / Ojos</td><td>Negro, corte fade / Marrón oscuro</td></tr>
+      <tr><td>Señas particulares</td><td>Cicatriz de 3 cm en ceja izquierda. Tatuaje de reloj de arena en antebrazo izquierdo. Tatuaje de Virgen de Luján en pecho. Iniciales "O.M." en nuca.</td></tr>
+      <tr><td>Última residencia conocida</td><td>Harmony, Los Santos, San Andreas, EE. UU.</td></tr>
+      <tr><td>Ocupación declarada</td><td>Mecánico automotriz</td></tr>
+    </table>
+  </div>
+
+  <h3>Antecedentes Penales — República Argentina</h3>
+  <table>
+    <tr>
+      <th style="width:30px;">N°</th>
+      <th>Fecha</th>
+      <th>Juzgado / Fiscalía</th>
+      <th>Cargo</th>
+      <th>Resolución</th>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-weight:700;">1</td>
+      <td>03/06/2015</td>
+      <td>Juzgado Correccional N° 4, Depto. Judicial La Matanza</td>
+      <td>Encubrimiento (art. 277 CP) — Posesión de vehículo de procedencia ilícita</td>
+      <td><span class="tag tag-gold">Condicional</span> Libertad asistida por 18 meses. No reincidió durante el período.</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-weight:700;">2</td>
+      <td>17/11/2016</td>
+      <td>Juzgado de Garantías N° 3, Depto. Judicial La Matanza</td>
+      <td>Resistencia a la autoridad (art. 239 CP) — Fuga durante control vehicular</td>
+      <td><span class="tag tag-gold">Multa y libertad condicional</span> Se le retuvo la licencia de conducir (no poseía). Causa cerrada por pago.</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-weight:700;">3</td>
+      <td>22/02/2019</td>
+      <td>Fiscalía Federal de Quilmes, Buenos Aires</td>
+      <td>Robo simple en grado de tentativa (art. 164 y 42 CP) — Intento de sustracción de vehículo en vía pública</td>
+      <td><span class="tag tag-green">Sobreseimiento parcial</span> No se pudo acreditar autoría material. Causa archivada.</td>
+    </tr>
+    <tr>
+      <td style="text-align:center; font-weight:700;">4</td>
+      <td>14/09/2021</td>
+      <td>Fiscalía Federal de Quilmes, Buenos Aires</td>
+      <td>Robo agravado por la noche (art. 164 inc. 2 CP), Asociación ilícita (art. 210 bis CP), Resistencia a la autoridad (art. 239 CP) — <strong>Operativo "Llave Maestra"</strong></td>
+      <td><span class="tag tag-red">Prófugo</span> Orden de captura nacional e internacional. Causa en estado de instrucción.</td>
+    </tr>
+  </table>
+
+  <!-- EVIDENCE CARDS -->
+  <h3>Material de Evidencia Asociado</h3>
+  <div class="evidence-grid">
+    <div class="evidence-card">
+      <div class="evidence-marker">EVID-001</div>
+      <h4>Fotografía de Vigilancia — CCTV Avellaneda</h4>
+      <p>Captura de cámara de seguridad en blanco y negro. Sujeto identificado trabajando en garage clandestino del partido de Avellaneda con herramienta en mano. Mirada directa a cámara — posible consciencia de vigilancia. Resolución media, timestamp legible.</p>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-marker">EVID-002</div>
+      <h4>Registro de Huellas Dactilares</h4>
+      <p>Huellas tomadas durante arresto del 03/06/2015 (causa N° 1). Registradas en sistema AFIS argentino. NO registradas en IAFIS (EE.UU.) — sujeto no fue procesado federalmente en territorio estadounidense.</p>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-marker">EVID-003</div>
+      <h4>Seguimiento Ruta 2 — Fuga</h4>
+      <p>Fotografía teleobjetivo capturada durante seguimiento post-Operativo Llave Maestra. Sujeto avistado caminando hacia estación de servicio en Ruta 2 con mochila. Posible punto de contacto telefónico previo a cruce fronterizo. Amanecer del 14/09/2021.</p>
+    </div>
+    <div class="evidence-card">
+      <div class="evidence-marker">EVID-004</div>
+      <h4>Punto de Encuentro — Quilmes</h4>
+      <p>Fotografía nocturna de vigilancia. Sujeto reunido con contacto no identificado junto a vehículo negro en calle residencial de Quilmes. Noche del 13/09/2021 — víspera del operativo. Posible coordinación final de logística.</p>
+    </div>
+  </div>
+
+  <!-- FINGERPRINT SECTION -->
+  <div class="fingerprint-section">
+    <div class="fingerprint-card">
+      <svg class="fingerprint-svg" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+        <!-- Ulnar loop pattern - more realistic -->
+        <defs>
+          <filter id="rough1">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
+          </filter>
+        </defs>
+        <g filter="url(#rough1)" opacity="0.85">
+          <!-- Outer ridges -->
+          <path d="M50 8 C32 8 20 24 20 42 C20 65 32 88 50 102 C68 88 80 65 80 42 C80 24 68 8 50 8" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 13 C35 13 26 27 26 42 C26 62 35 82 50 95 C65 82 74 62 74 42 C74 27 65 13 50 13" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 18 C38 18 32 30 32 42 C32 59 38 76 50 88 C62 76 68 59 68 42 C68 30 62 18 50 18" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 23 C41 23 38 33 38 42 C38 56 41 70 50 81 C59 70 62 56 62 42 C62 33 59 23 50 23" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 28 C44 28 44 36 44 42 C44 53 44 64 50 74 C56 64 56 53 56 42 C56 36 56 28 50 28" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 33 C48 33 49 39 49 42 C49 50 49 58 50 67 C51 58 51 50 51 42 C51 39 52 33 50 33" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <!-- Loop detail -->
+          <path d="M35 50 Q38 45 42 48 Q45 52 42 56 Q38 58 35 54" fill="none" stroke="#1a1a1a" stroke-width="1"/>
+        </g>
+        <!-- Mechanic scar across thumb -->
+        <line x1="22" y1="55" x2="38" y2="48" stroke="#8b1a1a" stroke-width="1.8" opacity="0.7"/>
+        <line x1="23" y1="57" x2="39" y2="50" stroke="#8b1a1a" stroke-width="0.8" opacity="0.5"/>
+        <!-- Callus marks -->
+        <ellipse cx="35" cy="70" rx="4" ry="3" fill="none" stroke="#555" stroke-width="1" opacity="0.5"/>
+        <ellipse cx="42" cy="75" rx="3" ry="2" fill="none" stroke="#555" stroke-width="0.8" opacity="0.4"/>
+      </svg>
+      <div class="fingerprint-label">Pulgar Derecho</div>
+    </div>
+    <div class="fingerprint-card">
+      <svg class="fingerprint-svg" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+        <!-- Whorl pattern - spiral -->
+        <defs>
+          <filter id="rough2">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
+          </filter>
+        </defs>
+        <g filter="url(#rough2)" opacity="0.85">
+          <!-- Spiral whorl -->
+          <ellipse cx="50" cy="55" rx="34" ry="48" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <ellipse cx="50" cy="55" rx="28" ry="42" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <ellipse cx="50" cy="55" rx="22" ry="36" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <ellipse cx="50" cy="55" rx="16" ry="30" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <ellipse cx="50" cy="55" rx="10" ry="24" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <ellipse cx="50" cy="55" rx="5" ry="18" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <ellipse cx="50" cy="55" rx="2" ry="12" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <!-- Delta points -->
+          <circle cx="30" cy="40" r="1.5" fill="#1a1a1a" opacity="0.6"/>
+          <circle cx="70" cy="40" r="1.5" fill="#1a1a1a" opacity="0.6"/>
+        </g>
+        <!-- Mechanic callus on index finger -->
+        <ellipse cx="62" cy="35" rx="6" ry="5" fill="none" stroke="#444" stroke-width="1.2" opacity="0.6"/>
+        <ellipse cx="60" cy="38" rx="4" ry="3" fill="none" stroke="#444" stroke-width="0.8" opacity="0.5"/>
+        <!-- Small burn scar -->
+        <path d="M38 80 Q42 78 45 82" fill="none" stroke="#8b1a1a" stroke-width="1.5" opacity="0.6"/>
+        <path d="M39 81 Q42 79 44 82" fill="none" stroke="#8b1a1a" stroke-width="0.6" opacity="0.4"/>
+      </svg>
+      <div class="fingerprint-label">Índice Derecho</div>
+    </div>
+    <div class="fingerprint-card">
+      <svg class="fingerprint-svg" viewBox="0 0 100 130" xmlns="http://www.w3.org/2000/svg">
+        <!-- Arch pattern - tented -->
+        <defs>
+          <filter id="rough3">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="1.5"/>
+          </filter>
+        </defs>
+        <g filter="url(#rough3)" opacity="0.85">
+          <!-- Arch ridges -->
+          <path d="M50 6 C34 6 24 20 24 38 C24 60 34 82 50 98 C66 82 76 60 76 38 C76 20 66 6 50 6" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 11 C37 11 30 23 30 38 C30 57 37 75 50 90 C63 75 70 57 70 38 C70 23 63 11 50 11" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 16 C40 16 36 26 36 38 C36 54 40 70 50 82 C60 70 64 54 64 38 C64 26 60 16 50 16" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 21 C43 21 42 29 42 38 C42 51 43 65 50 74 C57 65 58 51 58 38 C58 29 57 21 50 21" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <path d="M50 26 C47 26 48 32 48 38 C48 48 47 58 50 66 C53 58 52 48 52 38 C52 32 53 26 50 26" fill="none" stroke="#1a1a1a" stroke-width="1.4"/>
+          <!-- Tented peak -->
+          <path d="M48 30 L50 25 L52 30" fill="none" stroke="#1a1a1a" stroke-width="1.2"/>
+        </g>
+        <!-- Heavy callus from wrench work -->
+        <rect x="30" y="60" width="14" height="10" rx="4" fill="none" stroke="#444" stroke-width="1.2" opacity="0.6"/>
+        <line x1="32" y1="62" x2="42" y2="62" stroke="#444" stroke-width="0.6" opacity="0.4"/>
+        <line x1="32" y1="65" x2="42" y2="65" stroke="#444" stroke-width="0.6" opacity="0.4"/>
+        <line x1="32" y1="68" x2="42" y2="68" stroke="#444" stroke-width="0.6" opacity="0.4"/>
+      </svg>
+      <div class="fingerprint-label">Medio Derecho</div>
+    </div>
+    <div class="fingerprint-info">
+      <p><strong>Registro dactilar:</strong> Huellas dactilares tomadas el 03/06/2015 durante arresto en La Matanza. Registradas en sistema AFIS (Argentina). <strong>NO disponibles en IAFIS (EE.UU.)</strong> — no hubo proceso federal estadounidense.</p>
+      <p><strong>Patrones dactilares:</strong> Pulgar: Loop ulnar. Índice: Whorl espiral con dos deltas. Medio: Arch tented (arco en tienda de campaña).</p>
+      <p><strong>Señas dactilares particulares:</strong> El pulgar derecho presenta una cicatriz de 2 cm (corte con herramienta de taller mecánico, circa 2017). El índice derecho muestra callosidad pronunciada en zona lateral (uso prolongado de llaves de torque). El dedo medio presenta callosidad en base por trabajo con destornilladores y herramientas de mecánica automotriz.</p>
+      <p><strong>Nota operativa:</strong> Para identificación en territorio estadounidense se requiere comparación manual con registros argentinos vía canal INTERPOL. Sistema LSPD NO tiene match automático. Esto significa que <em>un control rutinario de tráfico NO generará alerta</em> si el sujeto presenta documentación de "Damián Olivera".</p>
+      <p><strong>Identificación positiva solo mediante:</strong> (1) Investigación profunda con cruce internacional, (2) Reconocimiento visual por informante o agente con conocimiento del caso, (3) Error del sujeto que exponga su verdadera identidad.</p>
+    </div>
+  </div>
+
+  <h3>Asociados Conocidos y Contactos</h3>
+  <table>
+    <tr>
+      <th>Nombre/Alias</th>
+      <th>Relación</th>
+      <th>Estado</th>
+      <th>Notas</th>
+    </tr>
+    <tr>
+      <td><strong>Gerald Whitman</strong></td>
+      <td>Empleador (taller mecánico)</td>
+      <td><span class="tag tag-green">Sin antecedentes</span></td>
+      <td>Dueño del taller en Harmony. Posible cómplice sin saberlo o encubridor. Se recomienda entrevista.</td>
+    </tr>
+    <tr>
+      <td><strong>"Flaco" Mendoza</strong></td>
+      <td>Contacto informal</td>
+      <td><span class="tag tag-gold">Antecedentes menores</span></td>
+      <td>Visto en múltiples ocasiones en "El Rincón". Conocido por tráfico de menor cuantía. Posible enlace.</td>
+    </tr>
+    <tr>
+      <td><strong>Victor "Vicky" Ramos</strong></td>
+      <td>Asociado operativo</td>
+      <td><span class="tag tag-red">Prófugo</span></td>
+      <td>Sujeto de interés en investigación paralela. Visto junto a "Olivera" en Garage Vespucci el 15/03/2023.</td>
+    </tr>
+    <tr>
+      <td><strong>María Elena Torres</strong></td>
+      <td>Vecina / posible contacto</td>
+      <td><span class="tag tag-green">Sin antecedentes</span></td>
+      <td>Vive en el mismo edificio en Pillbox Hill. Relación bajo investigación.</td>
+    </tr>
+    <tr>
+      <td><strong>[NO IDENTIFICADO]</strong></td>
+      <td>Contacto principal</td>
+      <td><span class="tag tag-red">Desconocido</span></td>
+      <td>Sujeto masculino, tez clara, 45-50 años. Visto reuniéndose con "Olivera" en ubicación no revelada. Posible jefe de operación local.</td>
+    </tr>
+  </table>
+
+  <h3>Vehículos Asociados</h3>
+  <table>
+    <tr>
+      <th>Vehículo</th>
+      <th>Patente/ID</th>
+      <th>Estado</th>
+      <th>Notas</th>
+    </tr>
+    <tr>
+      <td><strong>Chevrolet Van</strong></td>
+      <td>LS-4821-KM</td>
+      <td><span class="tag tag-blue">Registrado a nombre falso</span></td>
+      <td>Vehículo de "trabajo" del taller. Usado para traslados legítimos y posiblemente ilícitos.</td>
+    </tr>
+    <tr>
+      <td><strong>Toyota Supra (modificado)</strong></td>
+      <td>[SIN PATENTE]</td>
+      <td><span class="tag tag-red">Robado / Modificado</span></td>
+      <td>Visto en Garage Vespucci. Motor modificado, sin identificadores. Altamente probable que sea vehículo de escape para operativos.</td>
+    </tr>
+    <tr>
+      <td><strong>Sedan genérico (gris)</strong></td>
+      <td>LS-7734-QR</td>
+      <td><span class="tag tag-gold">Patente clonada</span></td>
+      <td>Patente reportada como clonada. Vehículo original localizado en otro estado. Posible "auto fantasma" para operativos.</td>
+    </tr>
+    <tr>
+      <td><strong>Moto deportiva (negra)</strong></td>
+      <td>[SIN PATENTE]</td>
+      <td><span class="tag tag-red">No registrado</span></td>
+      <td>Visto circulando sin patente en zona de Pillbox Hill. Posible vehículo de fuga rápida.</td>
+    </tr>
+  </table>
+
+
+  <div class="behavior-analysis">
+    <div class="behavior-item">
+      <div class="behavior-title">Horarios</div>
+      <p>Trabaja en el taller de 08:00 a 18:00. Actividad sospechosa registrada entre 22:00 y 04:00. Patrón consistente de 5 días laborales + actividad nocturna fines de semana.</p>
+    </div>
+    <div class="behavior-item">
+      <div class="behavior-title">Rutas</div>
+      <p>Usa rutas alternativas para evitar cámaras. Cambia de vehículo cada 2-3 operativos. Prefiere calles sin salida para reuniones (posibles puntos de escape pre-planificados).</p>
+    </div>
+    <div class="behavior-item">
+      <div class="behavior-title">Comunicaciones</div>
+      <p>Usa teléfonos desechables (burner phones). Cambia número cada 7-10 días. No usa redes sociales. Comunicaciones cifradas sospechadas pero no interceptadas.</p>
+    </div>
+    <div class="behavior-item">
+      <div class="behavior-title">Finanzas</div>
+      <p>Ingresos declarados inconsistentes con estilo de vida. Alquiler pagado en efectivo. No usa tarjetas de crédito. Posible lavado a través del taller mecánico.</p>
+    </div>
+    <div class="behavior-item">
+      <div class="behavior-title">Perfil Psicológico</div>
+      <p>Sujeto introvertido, hipervigilante, con tendencia al aislamiento social. Muestra alta capacidad de planificación pero baja tolerancia a la improvisación. Posible TEPT no diagnosticado (historia de fuga traumática). Lealtad extrema a pocos contactos verificados.</p>
+    </div>
+  </div>
+
+  <h3>Protocolo de Identificación y Contención</h3>
+  <div class="police-box" style="border-left: 4px solid var(--blue-ink);">
+    <p style="font-size:0.85rem; margin-bottom:0.8rem;"><strong>¿Por qué LSPD no lo arresta de inmediato?</strong></p>
+    <table>
+      <tr><td>Identidad activa</td><td>El sujeto opera bajo identidad de <strong>"Damián Olivera"</strong> (uruguayo, pasaporte legítimo en sistemas estadounidenses). Un control rutinario NO genera alerta.</td></tr>
+      <tr><td>Registros dactilares</td><td>Sus huellas están en AFIS (Argentina) pero NO en IAFIS (EE.UU.). No hay match automático posible en un control de rutina.</td></tr>
+      <tr><td>Difusión Roja</td><td>INTERPOL tiene Difusión Roja activa, pero esta NO es una orden de arresto automático — requiere validación por autoridad federal (FBI). LSPD de campo NO tiene acceso directo a esta información.</td></tr>
+      <tr><td>Protocolo actual</td><td>FBI monitorea de forma pasiva. Se prefiere seguimiento para identificar contactos locales antes de intervenir. Cualquier agente de campo que identifique al sujeto debe reportar — NO arrestar sin autorización de la División de Inteligencia.</td></tr>
+      <tr><td>Riesgo de exposición</td><td>Si el sujeto comete un delito grave en territorio estadounidense y es procesado, sus huellas serán tomadas y podrían generar match vía cooperación internacional. <strong>Esto activa la trama de extradición.</strong></td></tr>
+    </table>
+  <p style="font-size:0.78rem; margin-top:1rem; font-style:italic; color:var(--blue-ink);"><strong>Nota para el entrevistador OOC:</strong> Este protocolo está diseñado para que el personaje pueda existir en el servidor sin ser arrestado automáticamente. La policía puede investigarlo, seguirlo, o intentar descubrir su identidad como parte del roleplay — pero no hay un "CK instantáneo" por tener antecedentes en Argentina. La identidad falsa es su escudo, y que ese escudo se rompa depende de la trama y las decisiones del jugador.</p>
+  </div>
+
+  <!-- TIMELINE -->
+  <h3>Línea de Tiempo — Cronología del Sujeto</h3>
+  <div class="timeline-visual">
+    <div class="timeline-line"></div>
+    
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">1998</div>
+        <div class="timeline-title">Nacimiento</div>
+        <div class="timeline-desc">22 de mayo. Hospital Posadas, La Matanza, Buenos Aires. Hijo de Rubén Magnus (mecánico) y Silvia Fernández (auxiliar de escuela).</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2011</div>
+        <div class="timeline-title">Primeros Contactos</div>
+        <div class="timeline-desc">A los 13 años comienza a realizar "encargos" para Walter "El Wachi" Pereyra: llevar mensajes, vigilar esquinas, avisar si venía la policía. Primer contacto con el mundo delictivo.</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2013</div>
+        <div class="timeline-title">Aprende a Conducir</div>
+        <div class="timeline-desc">A los 15 años maneja su primer auto: Chevrolet Corsa 1997. Comienza a realizar traslados de vehículos robados y "encargos" más serios. Se especializa en conducción.</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2015</div>
+        <div class="timeline-title">Primer Arresto</div>
+        <div class="timeline-desc">17 años. Arrestado por posesión de vehículo de procedencia ilícita. Condena condicional, libertad asistida por 18 meses. Huellas registradas en AFIS argentino.</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2017</div>
+        <div class="timeline-title">Integración a la Organización</div>
+        <div class="timeline-desc">Se integra formalmente a la red de robo de vehículos de alta gama por encargo. Rol: conductor de extracción y logística de traslados. Comienza a operar entre Argentina, Uruguay y Paraguay.</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2019</div>
+        <div class="timeline-title">Sobreseimiento Parcial</div>
+        <div class="timeline-desc">22 de febrero. Causa por robo simple en grado de tentativa. No se pudo acreditar autoría material. Causa archivada. El sujeto continúa operando con mayor cautela.</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2021</div>
+        <div class="timeline-title">Operativo Llave Maestra</div>
+        <div class="timeline-desc">14 de septiembre. Operativo policial en Quilmes. Traición de Walter Pereyra ("El Wachi"). El sujeto logra evadir el cerco y huye del país. Orden de captura internacional emitida.</div>
+      </div>
+      <div class="timeline-dot" style="background:var(--red-stamp); width:16px; height:16px;"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2021</div>
+        <div class="timeline-title">Llegada a Los Santos</div>
+        <div class="timeline-desc">Noviembre. Ingresa a EE.UU. con identidad falsa de "Damián Olivera" (pasaporte uruguayo falso). Se establece en Strawberry. Trabaja de lavacoches mientras observa el territorio.</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2022</div>
+        <div class="timeline-title">Reinicio en Harmony</div>
+        <div class="timeline-desc">Consigue trabajo como mecánico en taller de Harmony. Se muda a Pillbox Hill. Comienza a hacer "encargos" nocturnos bajo identidad falsa. Construye red de contactos.</div>
+      </div>
+      <div class="timeline-dot"></div>
+    </div>
+
+    <div class="timeline-event">
+      <div class="timeline-content">
+        <div class="timeline-year">2024</div>
+        <div class="timeline-title">Presente</div>
+        <div class="timeline-desc">Opera como "Damián Olivera". Mecánico de día, operador logístico nocturno. FBI lo monitorea de forma pasiva. Interpol mantiene Difusión Roja activa. Sin grupo fijo, sin jefe.</div>
+      </div>
+      <div class="timeline-dot" style="background:var(--gold);"></div>
+    </div>
+  </div>
+
+  <!-- WIRETAP TRANSCRIPTS -->
+  <div class="wiretap-section">
+    <div class="wiretap-header">
+      TRANSCRIPCIONES DE ESCUCHAS TELEFÓNICAS — AUTORIZADAS POR JUZGADO FEDERAL N° 2 DE QUILMES
+    </div>
+
+    <div class="wiretap-transcript">
+      <div class="wiretap-classification">CLASIFICADO</div>
+      <div class="wiretap-meta">
+        <div class="wiretap-field">
+          <span class="wiretap-label">Caso:</span>
+          <span class="wiretap-value">Expediente N° 4.217/2021</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Fecha:</span>
+          <span class="wiretap-value">14 de marzo de 2021</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Duración:</span>
+          <span class="wiretap-value">02:47 minutos</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Interlocutores:</span>
+          <span class="wiretap-value">MAGNUS, Octavio (VOZ-1) / PEREYRA, Walter "El Wachi" (VOZ-2)</span>
+        </div>
+      </div>
+
+      <div class="wiretap-dialogue">
+        <p><span class="wiretap-speaker">VOZ-2 (El Wachi):</span> Tavi, tengo un cliente nuevo. Quiere tres unidades, todas de alta gama. BMW, Hilux y un Mercedes. Pago por adelantado, la mitad ahora.</p>
+        <p><span class="wiretap-speaker">VOZ-1 (Magnus):</span> ¿De dónde son?</p>
+        <p><span class="wiretap-speaker">VOZ-2:</span> Pilar. Barrio cerrado. Ya tengo la info de los horarios, cuándo salen, cuándo no hay nadie. Vos te encargás de sacarlos.</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> ¿Y la documentación?</p>
+        <p><span class="wiretap-speaker">VOZ-2:</span> El Colo ya está en eso. Dice que en dos semanas tiene todo listo. Vos prepará el garage de Quilmes, ahí los vamos a tener antes de moverlos.</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> ¿Quilmes? Eso es muy cerca de la Federal, Wachi. Me parece que nos estamos jugando.</p>
+        <p><span class="wiretap-speaker">VOZ-2:</span> Tranquilo, hermano. Ya tengo arreglado con un tipo de adentro. Si hay problema, nos avisa. Vos manejá, que para eso sos el mejor. El resto lo dejo yo.</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> ... Está bien. Pero si algo sale mal, yo no estoy. Me voy y no me encuentran más.</p>
+        <p><span class="wiretap-speaker">VOZ-2:</span> No va a salir mal. Confía en mí, Tavi. Esto es grande. Vamos a mover sesenta unidades este año si todo sale bien.</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> ... Dale. Pero Quilmes no me cierra. Decile al Colo que busque algo más lejos.</p>
+        <p><span class="wiretap-speaker">VOZ-2:</span> Ya está arreglado. No hay vuelta atrás. Nos vemos el jueves.</p>
+      </div>
+
+      <div class="wiretap-note">
+        <strong>Nota del analista:</strong> En esta llamada se evidencia la preocupación del sujeto MAGNUS por la ubicación del garage en Quilmes, cercano a la comisaría. El sujeto muestra intuición sobre el riesgo operativo, pero cede ante la presión de PEREYRA. Esta conversación demuestra que MAGNUS no era el líder de la operación, pero sí un operador clave cuya participación era indispensable. La mención de "El Colo" confirma la participación de Martín Acosta en la falsificación de documentación.
+      </div>
+    </div>
+
+    <div class="wiretap-transcript">
+      <div class="wiretap-classification">CLASIFICADO</div>
+      <div class="wiretap-meta">
+        <div class="wiretap-field">
+          <span class="wiretap-label">Caso:</span>
+          <span class="wiretap-value">Expediente N° 4.217/2021</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Fecha:</span>
+          <span class="wiretap-value">12 de septiembre de 2021</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Duración:</span>
+          <span class="wiretap-value">01:23 minutos</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Interlocutores:</span>
+          <span class="wiretap-value">MAGNUS, Octavio (VOZ-1) / BENÍTEZ, Lucas "Luqui" (VOZ-3)</span>
+        </div>
+      </div>
+
+      <div class="wiretap-dialogue">
+        <p><span class="wiretap-speaker">VOZ-3 (Luqui):</span> Tavi, ¿estás seguro de esto? El Wachi me dijo que todo estaba listo, pero yo vi unos movimientos raros cerca del garage. Autos que no eran de siempre, gente mirando mucho.</p>
+        <p><span class="wiretap-speaker">VOZ-1 (Magnus):</span> Yo también lo noté. Hay algo que no cierra. Le dije a Wachi que cambiemos de ubicación, pero me dijo que ya está todo arreglado.</p>
+        <p><span class="wiretap-speaker">VOZ-3:</span> ¿Y si cancelamos?</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> No podemos. Ya se pagó la mitad. Si nos bajamos ahora, nos buscan a nosotros también. El cliente no perdona.</p>
+        <p><span class="wiretap-speaker">VOZ-3:</span> ... ¿Y si algo sale mal?</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> Vos tenés el auto listo para salir rápido. Si veo que hay problema, te aviso y nos vamos. No esperes, no preguntes, manejá. Yo hago lo mismo.</p>
+        <p><span class="wiretap-speaker">VOZ-3:</span> ... Está bien. Pero Tavi, si nos agarran, yo no digo nada. Vos sabés.</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> Yo tampoco. Nunca.</p>
+      </div>
+
+      <div class="wiretap-note">
+        <strong>Nota del analista:</strong> Conversación grabada dos días antes del Operativo Llave Maestra. Evidencia que tanto MAGNUS como BENÍTEZ tenían sospechas sobre la seguridad del operativo, pero continuaron por presión de PEREYRA y del "cliente" no identificado. MAGNUS demuestra planificación de contingencia (auto listo para fuga) y lealtad absoluta ("yo no digo nada. Nunca."). BENÍTEZ fue arrestado en el lugar y no colaboró con la investigación, confirmando la lealtad del grupo.
+      </div>
+    </div>
+
+    <div class="wiretap-transcript">
+      <div class="wiretap-classification">CLASIFICADO</div>
+      <div class="wiretap-meta">
+        <div class="wiretap-field">
+          <span class="wiretap-label">Caso:</span>
+          <span class="wiretap-value">Expediente N° 4.217/2021</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Fecha:</span>
+          <span class="wiretap-value">14 de septiembre de 2021 — 03:15 AM</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Duración:</span>
+          <span class="wiretap-value">00:42 minutos</span>
+        </div>
+        <div class="wiretap-field">
+          <span class="wiretap-label">Interlocutores:</span>
+          <span class="wiretap-value">MAGNUS, Octavio (VOZ-1) / PEREYRA, Walter "El Wachi" (VOZ-2)</span>
+        </div>
+      </div>
+
+      <div class="wiretap-dialogue">
+        <p><span class="wiretap-speaker">VOZ-1 (Magnus):</span> Wachi, estoy en el garage. Ya cargué la Hilux. ¿Dónde estás?</p>
+        <p><span class="wiretap-speaker">VOZ-2 (El Wachi):</span> ... Estoy en camino. Diez minutos, Tavi. Diez minutos y llego.</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> Algo no está bien. Escuché ruidos afuera. ¿Venis solo?</p>
+        <p><span class="wiretap-speaker">VOZ-2:</span> Sí, sí. Tranquilo. Ya llego.</p>
+        <p><span class="wiretap-speaker">VOZ-1:</span> ... Wachi, si nos están tendiendo una trampa, yo me voy. No me voy a quedar esperando.</p>
+        <p><span class="wiretap-speaker">VOZ-2:</span> No hay trampa, hermano. Confía en mí. Diez minutos.</p>
+        <p><em>[Fin de la llamada. A las 03:47 AM, la Policía Federal ingresa al garage. PEREYRA nunca llegó.]</em></p>
+      </div>
+
+      <div class="wiretap-note">
+        <strong>Nota del analista:</strong> Última comunicación registrada entre MAGNUS y PEREYRA antes del operativo. MAGNUS demuestra intuición sobre la emboscada ("algo no está bien"), pero PEREYRA lo calma con promesas falsas. La mención de "diez minutos" y la posterior ausencia de PEREYRA confirman que este tenía conocimiento previo del operativo policial. Esta llamada es la evidencia más fuerte de la traición de PEREYRA y de que MAGNUS fue entregado a las autoridades.
+      </div>
+    </div>
+  </div>
+
+  <!-- CRIMINOLOGICAL PROFILE -->
+  <div class="crim-profile">
+    <div class="crim-header">
+      <div class="crim-title">Perfil Criminológico</div>
+      <div class="crim-subtitle">FBI — Unidad de Análisis de Conducta — Evaluación Confidencial</div>
+    </div>
+
+    <div class="crim-section">
+      <div class="crim-section-title">Evaluación General</div>
+      <div class="crim-text">
+        El sujeto MAGNUS, Octavio Damián presenta un perfil psicológico complejo que combina alta inteligencia operativa con vulnerabilidades emocionales significativas. No encaja en el arquetipo del criminal común motivado por codicia o violencia. Su comportamiento sugiere una personalidad moldeada por el entorno socioeconómico del Gran Buenos Aires, donde la supervivencia requiere adaptabilidad extrema y desconfianza estructural.
+      </div>
+    </div>
+
+    <div class="crim-section">
+      <div class="crim-section-title">Rasgos de Personalidad Dominantes</div>
+      <div class="crim-meter">
+        <span class="crim-meter-label">Inteligencia</span>
+        <div class="crim-meter-bar">
+          <div class="crim-meter-fill" style="width: 85%;"></div>
+        </div>
+        <span class="crim-meter-value">85/100</span>
+      </div>
+      <div class="crim-meter">
+        <span class="crim-meter-label">Planificación</span>
+        <div class="crim-meter-bar">
+          <div class="crim-meter-fill" style="width: 90%;"></div>
+        </div>
+        <span class="crim-meter-value">90/100</span>
+      </div>
+      <div class="crim-meter">
+        <span class="crim-meter-label">Impulsividad</span>
+        <div class="crim-meter-bar">
+          <div class="crim-meter-fill" style="width: 35%;"></div>
+        </div>
+        <span class="crim-meter-value">35/100</span>
+      </div>
+      <div class="crim-meter">
+        <span class="crim-meter-label">Violencia</span>
+        <div class="crim-meter-bar">
+          <div class="crim-meter-fill" style="width: 20%;"></div>
+        </div>
+        <span class="crim-meter-value">20/100</span>
+      </div>
+      <div class="crim-meter">
+        <span class="crim-meter-label">Lealtad</span>
+        <div class="crim-meter-bar">
+          <div class="crim-meter-fill" style="width: 95%;"></div>
+        </div>
+        <span class="crim-meter-value">95/100</span>
+      </div>
+      <div class="crim-meter">
+        <span class="crim-meter-label">Paranoia</span>
+        <div class="crim-meter-bar">
+          <div class="crim-meter-fill" style="width: 80%;"></div>
+        </div>
+        <span class="crim-meter-value">80/100</span>
+      </div>
+    </div>
+
+    <div class="crim-section">
+      <div class="crim-section-title">Análisis Conductual</div>
+      <div class="crim-text">
+        <strong>Patrón de comportamiento:</strong> El sujeto opera bajo un código moral interno rígido que prioriza la lealtad sobre el beneficio económico. No roba a familias trabajadoras, no ejerce violencia innecesaria, y mantiene una distinción clara entre "negocios" y "daño personal". Este código sugiere una formación ética temprana (posiblemente influenciada por su padre, mecánico de oficio) que no fue completamente erosionada por su inserción en actividades ilícitas.
+      </div>
+      <div class="crim-text" style="margin-top:1rem;">
+        <strong>Motivaciones:</strong> A diferencia de otros miembros de la organización (especialmente PEREYRA, motivado por acumulación de riqueza y estatus), MAGNUS parece impulsado por necesidad económica familiar y, posteriormente, por inercia. No muestra ambición de liderazgo ni deseo de ascenso dentro de la jerarquía criminal. Su especialización en conducción y logística refleja preferencia por roles de soporte donde puede ejercer control sin asumir responsabilidad directa.
+      </div>
+      <div class="crim-text" style="margin-top:1rem;">
+        <strong>Vulnerabilidades explotables:</strong> (1) Lealtad extrema: si se amenaza a personas cercanas (madre, hermano), el sujeto puede tomar decisiones irracionales. (2) Culpa reprimida: la traición de PEREYRA y las consecuencias para sus compañeros generan culpa silenciosa que puede ser utilizada en interrogatorios. (3) Paranoia: la hipervigilancia constante genera aislamiento social y dificulta la formación de redes de apoyo estables. (4) Identidad falsa: la presión de mantener una fachada ("Damián Olivera") genera estrés acumulativo que puede llevar a errores.
+      </div>
+    </div>
+
+    <div class="crim-section">
+      <div class="crim-section-title">Diagnóstico Preliminar</div>
+      <div class="crim-text">
+        <strong>Posibles trastornos:</strong> (1) Estrés postraumático complejo (C-PTSD) — historial de fuga traumática, traición, y separación forzada de familia. (2) Trastorno de personalidad evitativa — aislamiento autoimpuesto, dificultad para confiar, hipervigilancia social. (3) Rasgos de trastorno obsesivo-compulsivo — necesidad de control, planificación excesiva, rituales de seguridad.
+      </div>
+      <div class="crim-text" style="margin-top:1rem;">
+        <strong>Nota:</strong> Estos diagnósticos son preliminares y basados en observación de patrones conductuales. Se recomienda evaluación psicológica formal si el sujeto es capturado y cooperante.
+      </div>
+    </div>
+
+    <div class="crim-section">
+      <div class="crim-section-title">Recomendaciones Operativas</div>
+      <div class="crim-text">
+        (1) <strong>No subestimar capacidad de evasión:</strong> El sujeto demostró habilidad excepcional para evadir operativos montados con inteligencia. Cualquier intento de captura debe asumir que tendrá plan de fuga pre-establecido.
+      </div>
+      <div class="crim-text">
+        (2) <strong>Explotar lealtad familiar:</strong> En caso de interrogatorio, mencionar a su madre (Silvia Fernández) o hermano (Facundo Magnus) puede generar cooperación. El sujeto mostró disposición a huir del país para proteger a su familia de consecuencias legales.
+      </div>
+      <div class="crim-text">
+        (3) <strong>Ofrecer acuerdo de colaboración:</strong> Dado su perfil de acción defensiva (capaz de violencia pero prefiere evitarla) y su conocimiento detallado de la organización, MAGNUS sería candidato ideal para acuerdo de reducción de pena a cambio de testimonio contra PEREYRA y otros miembros. Su lealtad al grupo se rompió tras la traición, lo que genera motivación para cooperar.
+      </div>
+      <div class="crim-text">
+        (4) <strong>Vigilancia pasiva preferible:</strong> Arresto inmediato no es prioritario. Se recomienda continuar monitoreo para identificar contactos en Los Santos y mapear red completa antes de intervenir.
+      </div>
+    </div>
+
+    <div style="text-align:right; margin-top:2rem; font-family:'IBM Plex Mono',monospace; font-size:0.75rem; color:var(--ink-light);">
+      <strong>Agente responsable:</strong> Special Agent M. Richardson<br>
+      <strong>Unidad:</strong> Behavioral Analysis Unit — FBI<br>
+      <strong>Fecha de evaluación:</strong> 15 de junio de 2022<br>
+      <strong>Clasificación:</strong> CONFIDENCIAL — Solo para uso interno
+    </div>
+  </div>
+
+  <!-- INTERPOL RED NOTICE -->
+  <div class="interpol-notice">
+    <div class="interpol-stamp">RED NOTICE</div>
+    <div class="interpol-header">
+      <div class="interpol-logo">INTERPOL</div>
+      <div class="interpol-subtitle">International Criminal Police Organization — General Secretariat</div>
+    </div>
+
+    <div class="interpol-field">
+      <span class="interpol-label">Notice Type:</span>
+      <span class="interpol-value">Red Notice — Request for Provisional Arrest with a View to Extradition</span>
+    </div>
+    <div class="interpol-field">
+      <span class="interpol-label">Reference Number:</span>
+      <span class="interpol-value">RN-2021-AR-4217/21</span>
+    </div>
+    <div class="interpol-field">
+      <span class="interpol-label">Date of Issue:</span>
+      <span class="interpol-value">02 November 2021</span>
+    </div>
+    <div class="interpol-field">
+      <span class="interpol-label">Issuing Country:</span>
+      <span class="interpol-value">Argentina — Federal Court of Quilmes, Buenos Aires Province</span>
+    </div>
+    <div class="interpol-field">
+      <span class="interpol-label">Requesting Authority:</span>
+      <span class="interpol-value">Dr. Héctor M. Villarreal, Federal Prosecutor — Quilmes Federal Prosecutor's Office</span>
+    </div>
+
+    <div style="margin:1.5rem 0; padding:1rem; background:rgba(139,26,26,0.05); border-left:3px solid var(--red-stamp);">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:700; color:var(--red-stamp); margin-bottom:0.5rem; text-transform:uppercase;">Subject Identification</div>
+      <div class="interpol-field">
+        <span class="interpol-label">Name:</span>
+        <span class="interpol-value">MAGNUS, Octavio Damián</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Aliases:</span>
+        <span class="interpol-value">"El Tavi", "Magnus", "El Flaco", "O.M.", "Damián Olivera" (false identity — USA)</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Date of Birth:</span>
+        <span class="interpol-value">22 May 1998</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Place of Birth:</span>
+        <span class="interpol-value">La Matanza, Buenos Aires, Argentina</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Nationality:</span>
+        <span class="interpol-value">Argentine</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Sex:</span>
+        <span class="interpol-value">Male</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Height:</span>
+        <span class="interpol-value">1.78 m</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Weight:</span>
+        <span class="interpol-value">78 kg</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Hair:</span>
+        <span class="interpol-value">Black, dreadlocks</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Eyes:</span>
+        <span class="interpol-value">Dark brown</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Distinguishing Marks:</span>
+        <span class="interpol-value">3 cm scar on left eyebrow. Tribal tattoos covering neck (reddish-brown ink). Hourglass tattoo on left forearm. Virgin of Luján tattoo on chest. "O.M." initials on nape (hidden under dreadlocks).</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Last Known Location:</span>
+        <span class="interpol-value">Harmony, Los Santos, San Andreas, United States of America</span>
+      </div>
+    </div>
+
+    <div style="margin:1.5rem 0;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:700; color:var(--red-stamp); margin-bottom:0.5rem; text-transform:uppercase;">Charges</div>
+      <div class="interpol-field">
+        <span class="interpol-label">Primary Charges:</span>
+        <span class="interpol-value">Aggravated Robbery (Art. 164 inc. 2 and 3, Argentine Penal Code), Criminal Association (Art. 210 bis), Aggravated Concealment (Art. 278)</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Expected Sentence:</span>
+        <span class="interpol-value">10 to 25 years of effective imprisonment</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Arrest Warrant:</span>
+        <span class="interpol-value">National warrant issued 18/09/2021. International warrant requested via INTERPOL on 02/11/2021.</span>
+      </div>
+    </div>
+
+    <div style="margin:1.5rem 0;">
+      <div style="font-family:'IBM Plex Mono',monospace; font-size:0.75rem; font-weight:700; color:var(--red-stamp); margin-bottom:0.5rem; text-transform:uppercase;">Extradition Information</div>
+      <div class="interpol-field">
+        <span class="interpol-label">Extradition Treaty:</span>
+        <span class="interpol-value">Argentina — United States of America Extradition Treaty (in force since 1997)</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Formal Request:</span>
+        <span class="interpol-value">Submitted 14/02/2022. Currently pending before Federal Court of San Andreas.</span>
+      </div>
+      <div class="interpol-field">
+        <span class="interpol-label">Special Notes:</span>
+        <span class="interpol-value">Subject entered USA under false identity "Damián Olivera" (fake Uruguayan passport). US law enforcement (LSPD) does NOT have active record of "Magnus" in their systems. Only INTERPOL and FBI are aware of true identity. Any field agent who identifies subject must report — NOT intervene without federal authorization.</span>
+      </div>
+    </div>
+
+    <div style="margin-top:2rem; padding-top:1rem; border-top:1px solid var(--border); text-align:center; font-family:'IBM Plex Mono',monospace; font-size:0.7rem; color:var(--ink-light);">
+      <strong>This Red Notice is issued at the request of Argentina and is not an international arrest warrant.</strong><br>
+      It is a request to locate and provisionally arrest a person pending extradition.<br>
+      For official verification, contact INTERPOL General Secretariat — Lyon, France<br>
+      Reference: RN-2021-AR-4217/21
+    </div>
+  </div>
+</div>
+
+  <h3>Evaluación de Riesgo</h3>
+  <p style="margin-bottom:0.5rem;"><strong>Nivel de peligrosidad:</strong> <span class="tag tag-red">Medio-Alto</span></p>
+  <table>
+    <tr><td>Violencia</td><td>Capaz de usar violencia cuando es necesario, especialmente en situaciones defensivas o para proteger a socios. No busca confrontación directa pero tiene entrenamiento básico en manejo de armas y combate callejero. Perfil de "acción defensiva" — prefiere evitar tiroteos pero puede participar en ellos cuando la situación lo requiere. Historial de fuga exitosa bajo presión extrema.</td></tr>
+    <tr><td>Fuga</td><td><span class="tag tag-red">Alto</span> El sujeto demostró capacidad operativa para evadir un cerco policial montado, cruzar fronteras con documentación falsa y mantener perfil bajo durante más de tres meses sin ser detectado. Se considera altamente probable que intente evadir la detención si se siente comprometido.</td></tr>
+    <tr><td>Red de contactos</td><td>Se presume que el sujeto ha establecido vínculos con elementos del crimen organizado local en Los Santos. Se investiga la naturaleza y extensión de dichos vínculos.</td></tr>
+    <tr><td>Recursos</td><td>Limitados al momento de su llegada. Se desconoce su situación económica actual.</td></tr>
+    <tr><td>Modus Operandi</td><td>Sujeto especializado en conducción evasiva y logística de traslados ilícitos. No opera como ejecutor material de robos — su rol es de soporte operativo de alto valor. Se le atribuye participación en al menos 40 hechos de sustracción de vehículos en el período 2017-2021 en la Provincia de Buenos Aires.</td></tr>
+  </table>
+
+  <h3>Notas de los Investigadores</h3>
+  <div class="investigator-note">
+    "El sujeto Magnus presenta un perfil atípico dentro del crimen organizado sudamericano. No busca visibilidad. No acumula riqueza ostensible. No consume sustancias de forma pública. Su motivación parece ser puramente económica y de supervivencia, no de ascenso social dentro de una organización. Esto lo hace más difícil de rastrear pero también, potencialmente, más vulnerable a un acuerdo de colaboración si se lo acorrala adecuadamente. Se recomienda NO subestimar su capacidad de adaptación. El sujeto aprendió a evadir un operativo federal montado con veintitrés años. En Los Santos, con más recursos y más espacio, puede ser significativamente más peligroso."
+    <span class="note-author">— Det. R. Muñoz, LSPD — Unidad de Crimen Organizado | 15/03/2022</span>
+  </div>
+  <div class="investigator-note">
+    "Confirmada la presencia del sujeto en el área de Los Santos. Posible empleo como mecánico en el distrito de Harmony. Se solicita vigilancia pasiva. No intervenir sin autorización de la División. El sujeto es pieza de un expediente mayor que involucra redes de tráfico vehicular entre Argentina, Uruguay y EE. UU. Su captura es prioritaria pero NO urgente — se prefiere seguimiento para identificar contactos locales."
+    <span class="note-author">— Analista J. Whitfield, FBI — Unidad de Crimen Transnacional | 22/04/2022</span>
+  </div>
+  <div class="investigator-note">
+    "Difusión Roja activa. Sujetos vinculados al caso 'Llave Maestra' identificados en tres países. Magnus es el único prófugo activo de alto perfil. Se mantiene cooperación bilateral con autoridades argentinas. Cualquier avistamiento confirmado debe reportarse de inmediato al canal seguro INTERPOL-LSPD."
+    <span class="note-author">— Agente L. Paredes, INTERPOL — Subdirección de Fugitivos | 10/06/2022</span>
+  </div>
+</div>
+<!-- SECTION IV moved to separate file: guia_interpretacion.html -->
+<!-- FOOTER -->
+<div class="doc-footer">
+  <div class="seal">LSPD<br>INTERPOL<br>Clasificado</div>
+  <p>Personaje: Octavio Damián Magnus</p>
+  <p>Discord: robahealts</p>
+  <p style="margin-top:1rem; font-size:0.6rem; opacity:0.6;">Este documento es de uso exclusivo para el proceso de whitelist del servidor.<br>Queda prohibida su distribución fuera del ámbito de la solicitud.</p>
+</div>
+
+</div><!-- end dossier-inner -->
+</div><!-- end dossier -->
+<!-- SCRIPTS -->
+<script>
+// Intersection Observer for scroll animations
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.subchapter, .phase, .police-box, .investigator-note').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(15px)';
+  el.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+  observer.observe(el);
+});
+</script>
+<script type="module" src="https://static.cloudflareinsights.com/beacon.min.js/v31edd6df95cf4e85bb4c19e7a9bdbcba1788362987495" integrity="sha512-iIg7k2xntmwu6/uSb5tpc/hySgZc4eoL31yB29W6tJFo2akwjPWcEqnCEdJvGexCL0KEQwVYv5BlowfhVz26hg==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"spa":2}' crossorigin="anonymous"></script>
+</body>
+</html>
